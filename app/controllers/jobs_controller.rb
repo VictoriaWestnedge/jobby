@@ -4,8 +4,7 @@ class JobsController < ApplicationController
     @jobs = Job.all
 
     if params[:query].present?
-      sql_query = "name ILIKE :query OR description ILIKE :query"
-      @jobs = Job.where(sql_query, query: "%#{params[:query]}%")
+      @jobs = Job.search_by_name_and_description_and_city(params[:query])
     end
 
     respond_to do |format|

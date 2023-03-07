@@ -5,7 +5,7 @@
   <div>
       <p class="h3">
         <% if params[:query].blank? %>
-          <%= pluralize jobs.count, "job" %> available
+          <h5><%= pluralize jobs.count, "job" %> available</h5>
         <% else %>
           <%= pluralize jobs.count, "result" %> for <code><%= params[:query] %></code>
         <% end %>
@@ -17,6 +17,7 @@
         <h5><%= job.name.titleize %></h5>
          <p><%= job.description.titleize %></p>
         <p><%= job.city.titleize %></p>
+        <%= link_to "More Details", job_path(job), class: "btn btn-success" %>
       <% end %>
     </div>
 

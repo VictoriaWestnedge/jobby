@@ -6,6 +6,13 @@ class Job < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
+  include PgSearch::Model
+    pg_search_scope :search_by_name_and_description_and_city,
+    against: [ :name, :description, :city ],
+    using: {
+      tsearch: { prefix: true }
+    }
+
   enum :category, {
     painting: 1,
     babysitting: 2,
@@ -14,4 +21,5 @@ class Job < ApplicationRecord
     petsitting: 5,
     furniture_assembly: 6
     }
+
 end

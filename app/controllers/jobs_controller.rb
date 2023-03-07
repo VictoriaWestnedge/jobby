@@ -4,11 +4,12 @@ class JobsController < ApplicationController
     @jobs = Job.all
 
     if params[:query].present?
-      @jobs = @jobs.where("name ILIKE ?", "%#{params[:query]}%")
+      sql_query = "name ILIKE :query OR description ILIKE :query"
+      @jobs = Job.where(sql_query, query: "%#{params[:query]}%")
     end
 
     respond_to do |format|
-      format.html # Follow regular flow of Rails
+      format.html
       format.text { render partial: "jobs/list", locals: { jobs: @jobs }, formats: [:html] }
     end
   end

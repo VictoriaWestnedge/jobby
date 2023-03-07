@@ -15,7 +15,7 @@ export default class extends Controller {
     fetch(url, {headers: {"Accept": "text/plain"}})
       .then(response => response.text())
       .then((data) => {
-        this.listTarget.outerHTML = data // calling list target in _list.html.erb and replaces its content ith the data
+        this.listTarget.outerHTML = data // calling list target in _list.html.erb and replaces its content with the data
       })
   }
 }

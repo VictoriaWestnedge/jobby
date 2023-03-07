@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row mt-3">
+    <div class="col">
+
+      <h5><strong><%= @job.name.titleize%></strong></h5>
+      <p>Address: <%= @job.address %></p>
+      <p>City: <%= @job.city %></p>
+      <p>Category: <%= @job.category %></p>
+      <p>Qty hours: <%= @job.qty_hour %></p>
+      <p>Price per hour: <%= @job.price_per_hour %></p>
+      <p>Start Date: <%= @job.start_date %></p>
+      <p>End Date: <%= @job.end_date %></p>
+      <p>Start Time: <%= @job.start_time %></p>
+      <p>End Time: <%= @job.end_time %></p>
+      <p>Description: <%= @job.description %></p>
+      <%= link_to "Apply", new_job_my_job_path(@job) %>
+    </div>
+  </div>
+</div>

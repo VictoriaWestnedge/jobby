@@ -14,4 +14,6 @@ class Job < ApplicationRecord
     petsitting: 5,
     furniture_assembly: 6
     }
+
+
 end

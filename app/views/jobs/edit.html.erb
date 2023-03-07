@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2> Update Your Job </h2>
+      <%= simple_form_for @job  do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :city %>
+        <%= f.input :category %>
+        <%= f.input :qty_hour %>
+        <%= f.input :price_per_hour %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.input :start_time %>
+        <%= f.input :end_time %>
+        <%= f.input :description %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit %>
+      <% end %>
+      <%= link_to "Back", jobs_path %>
+    </div>
+  </div>
+</div>

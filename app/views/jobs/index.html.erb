@@ -1,0 +1,19 @@
+<div class="container mt-3">
+
+  <div data-controller="search-jobs">
+    <%= form_with url: jobs_path, method: :get, html: {class:
+      "mb-4", data: {search_jobs_target: "form"}} do |f| %>
+        <%= f.text_field :query,
+                          class: "form-control",
+                          placeholder:"Search for a job",
+                          value: params[:query],
+        data: {
+          search_jobs_target: "input",
+          action: "keyup->search-jobs#update"
+          } %>
+    <% end %>
+
+    <%= render "list", jobs: @jobs %>
+  </div>
+
+</div>

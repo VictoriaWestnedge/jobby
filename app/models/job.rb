@@ -22,7 +22,7 @@ class Job < ApplicationRecord
     deliveries: 3,
     cleaning: 4,
     petsitting: 5,
-    furniture_assembly: 6
+    others: 6
     }
 
 end

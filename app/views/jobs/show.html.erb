@@ -13,7 +13,7 @@
       <p>Start Time: <%= @job.start_time.strftime("%k:%M") %></p>
       <p>End Time: <%= @job.end_time.strftime("%k:%M") %></p>
       <p>Total number of hours: <%= @job.qty_hour %></p>
-      <%= button_to "Apply here", job_my_jobs_path(@job), class: "btn btn-success" %>
+      <%= button_to "Apply here", my_jobs_path, class: "btn btn-success" %>
     </div>
   </div>
 

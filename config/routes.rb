@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :jobs do
-    resources :my_jobs, only: [:create]
+    resources :my_jobs, only: [:create ]
   end
+
+  resources :my_jobs, only: [:index]
 
   resources :reviews, only: [:index, :new, :create]
 
@@ -12,4 +14,5 @@ Rails.application.routes.draw do
     resources :messages, only: [:create]
   end
 
+  post "my_jobs,"
 end

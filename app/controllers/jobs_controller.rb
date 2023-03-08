@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @jobs = Job.all
@@ -59,6 +59,6 @@ class JobsController < ApplicationController
 
   private
   def job_params
-    params.require(:job).permit(:name, :adress, :description, :category, :qty_hour, :city, :price_per_hour, :start_date, :end_date, :start_time, :end_time)
+    params.require(:job).permit(:name, :address, :description, :category, :qty_hour, :city, :price_per_hour, :start_date, :end_date, :start_time, :end_time)
   end
 end

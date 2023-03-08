@@ -13,7 +13,15 @@
       <p>Start Time: <%= @job.start_time.strftime("%k:%M") %></p>
       <p>End Time: <%= @job.end_time.strftime("%k:%M") %></p>
       <p>Total number of hours: <%= @job.qty_hour %></p>
-      <%= link_to "Apply here", new_job_my_job_path(@job), class: "btn btn-success" %>
+
+      <% if user_signed_in? %>
+        <% if current_user.id == @job.user_id %>
+        <% else %>
+          <%= link_to "Apply here", new_job_my_job_path(@job), class: "btn btn-success" %>
+        <% end %>
+      <% else %>
+       <%= link_to "Apply here", new_job_my_job_path(@job), class: "btn btn-success" %>
+      <% end %>
       <%= link_to "Messages", chatroom_path(1, employer_id: @job.user_id), class:"btn btn-primary" %>
     </div>
   </div>

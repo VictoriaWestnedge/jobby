@@ -13,7 +13,7 @@
       <p>Start Time: <%= @job.start_time %></p>
       <p>End Time: <%= @job.end_time %></p>
       <p>Description: <%= @job.description %></p>
-      <%= link_to "Apply", new_job_my_job_path(@job) %>
+      <%= button_to "Apply", job_my_jobs_path(@job) %>
     </div>
   </div>
 </div>

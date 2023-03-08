@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :jobs do
-    resources :my_jobs, only: [:new, :create, :update]
+    resources :my_jobs, only: [:create]
   end
 
   resources :reviews, only: [:index, :new, :create]

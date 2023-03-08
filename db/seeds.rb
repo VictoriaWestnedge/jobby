@@ -41,3 +41,5 @@ job2 = Job.create!(name: "Babysitter needed", description: "I am looking for a b
 job3 = Job.create!(name: "Delivery of packages", description: "Looking for someone that can deliver some heavy boxes to my office", category: 3, address: "Av. Recoleta 3500", city: "Valparaiso", qty_hour: 2, price_per_hour: 20, start_date: Date.new(2023,3,20), end_date: Date.new(2023,3,20), start_time: Time.now.strftime("16:00:00"), end_time: Time.now.strftime("18:00:00"), user: user2)
 # file = URI.open("https://freedesignfile.com/upload/2018/10/Smiling-young-delivery-guy-Stock-Photo-04.jpg")
 # job3.photo.attach(io: file, filename: "r3.png", content_type: "image/png")
+
+

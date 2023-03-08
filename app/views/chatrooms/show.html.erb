@@ -1,6 +1,6 @@
 <div class="container chatroom"
   data-controller="chatroom-subscription"
-  data-chatroom-subscription-chatroom-id-value="<%= @chatroom.nickname %>">
+  data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
   <h1>Chat Room</h1>
 
   <div class="messages" data-chatroom-subscription-target="messages">
@@ -18,6 +18,7 @@
     placeholder: "Message",
     wrapper_html: {class: "flex-grow-1"}
   %>
+  <%= f.hidden_field :employer_id, :value => @employer_id %>
   <%= f.submit "Send", class: "btn btn-primary mb-3" %>
   <% end %>
 </div>

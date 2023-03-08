@@ -29,7 +29,7 @@ class JobsController < ApplicationController
       [{
         lat: @job.latitude,
         lng: @job.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: { job: @job })
+        info_window_html: render_to_string(partial: "info_window", locals: { job: @job }, formats: [:html])
       }]
   end
 

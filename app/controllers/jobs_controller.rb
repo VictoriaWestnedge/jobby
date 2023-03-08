@@ -20,10 +20,17 @@ class JobsController < ApplicationController
       format.html
       format.text { render partial: "jobs/list", locals: { jobs: @jobs }, formats: [:html] }
     end
+  end
 
   def show
     @job = Job.find(params[:id])
     @my_jobs = Job.where(user: current_user)
+    @marker =
+      [{
+        lat: @job.latitude,
+        lng: @job.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: { job: @job })
+      }]
   end
 
   def new

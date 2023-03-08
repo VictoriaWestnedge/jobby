@@ -14,5 +14,12 @@ Rails.application.routes.draw do
     resources :messages, only: [:create]
   end
 
-  post "my_jobs,"
+
+  #post "my_jobs,"
+
+  resources :users, only: [ :index, :show ] do
+    resources :reviews, only: [ :new, :create ]
+  end
+
+
 end

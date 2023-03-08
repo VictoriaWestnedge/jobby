@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_08_005511) do
+
+ActiveRecord::Schema[7.0].define(version: 2023_03_08_192934) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -71,13 +73,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_08_005511) do
   create_table "messages", force: :cascade do |t|
     t.string "content"
     t.bigint "chatroom_id", null: false
-    t.bigint "employer_id", null: false
-    t.bigint "employee_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
-    t.index ["employee_id"], name: "index_messages_on_employee_id"
-    t.index ["employer_id"], name: "index_messages_on_employer_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "my_jobs", force: :cascade do |t|
@@ -117,8 +117,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_08_005511) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "jobs", "users"
   add_foreign_key "messages", "chatrooms"
-  add_foreign_key "messages", "users", column: "employee_id"
-  add_foreign_key "messages", "users", column: "employer_id"
+  add_foreign_key "messages", "users"
   add_foreign_key "my_jobs", "jobs"
   add_foreign_key "my_jobs", "users"
   add_foreign_key "reviews", "users"

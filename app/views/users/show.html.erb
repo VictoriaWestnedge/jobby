@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row mt-3 mb-4">
+    <div class="col">
+
+      <h1><%= @user.nickname %>
+      <h2><%= pluralize @user.reviews.size, "review" %></h2>
+
+      <div>
+        <% if @user.reviews.blank? %>
+          Be the first to leave a review for <%= @user.nickname %>
+        <% else %>
+          <% @user.reviews.each do |review| %>
+            <p><%= review.rating_star %></p>
+            <p><%= review.description %></p>
+          <% end %>
+        <% end %>
+      </div>
+
+      <%= link_to "Back to all users", users_path %>
+
+    </div>
+  </div>
+</div>

@@ -42,4 +42,5 @@ job3 = Job.create!(name: "Delivery of packages", description: "Looking for someo
 # file = URI.open("https://freedesignfile.com/upload/2018/10/Smiling-young-delivery-guy-Stock-Photo-04.jpg")
 # job3.photo.attach(io: file, filename: "r3.png", content_type: "image/png")
 
-
+puts "Creating Chatroom"
+  Chatroom.create(name: "general")

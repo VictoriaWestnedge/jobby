@@ -18,7 +18,7 @@
     placeholder: "Message",
     wrapper_html: {class: "flex-grow-1"}
   %>
-  <%= f.hidden_field :employer_id, :value => @employer_id %>
   <%= f.submit "Send", class: "btn btn-primary mb-3" %>
   <% end %>
+<%= link_to "Back",job_path , class: "btn-back" %>
 </div>

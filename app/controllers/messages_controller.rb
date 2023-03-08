@@ -3,9 +3,9 @@ class MessagesController < ApplicationController
     @chatroom = Chatroom.find(params[:chatroom_id])
     @message = Message.new(message_params)
     @message.chatroom = @chatroom
-    @message.employee_id = current_user.id
-    # @message.employer_id = params[:employer_id]
+    @message.user = current_user
     if @message.save
+      # redirect_to chatroom_path(@chatroom)
       ChatroomChannel.broadcast_to(
         @chatroom,
         render_to_string(partial: "message", locals: {message: @message})
@@ -19,6 +19,6 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:content, :employer_id)
+    params.require(:message).permit(:content)
   end
 end

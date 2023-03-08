@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [ :index, :show ] do
-    resources :reviews, only: :create
+    resources :reviews, only: [ :new, :create ]
   end
 
 end

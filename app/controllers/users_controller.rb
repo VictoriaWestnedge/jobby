@@ -7,4 +7,5 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @review = Review.new
   end
+
 end

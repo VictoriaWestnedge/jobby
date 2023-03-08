@@ -1,11 +1,15 @@
 class ReviewsController < ApplicationController
 
+  def new
+    @review = Review.new
+  end
+
   def create
-    @review = Review.find(params[:user_id])
+    @user = User.find(params[:user_id])
     @review = Review.new(review_params)
     @review.user = @user
     if @review.save
-      redirect_to users_path(@user)
+      redirect_to user_path(@user)
     else
       render "users/show", status: :unprocessable_entity
     end

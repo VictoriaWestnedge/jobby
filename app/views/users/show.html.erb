@@ -16,6 +16,12 @@
         <% end %>
       </div>
 
+      <%= simple_form_for([@user, @review]) do |f| %>
+        <%= f.input :description %>
+        <%= f.input :rating_star %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+      <% end %>
+
       <%= link_to "Back to all users", users_path %>
 
     </div>

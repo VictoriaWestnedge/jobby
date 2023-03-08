@@ -1,4 +1,4 @@
 class Review < ApplicationRecord
   belongs_to :user
-  validates :content, length: { minimum: 20 }
+  validates :description, length: { minimum: 10 }
 end

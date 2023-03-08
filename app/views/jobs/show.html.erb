@@ -1,19 +1,26 @@
 <div class="container">
-  <div class="row mt-3">
+  <div class="row mt-3 mb-4">
     <div class="col">
 
       <h5><strong><%= @job.name.titleize%></strong></h5>
       <p>Address: <%= @job.address %></p>
       <p>City: <%= @job.city %></p>
       <p>Category: <%= @job.category %></p>
-      <p>Qty hours: <%= @job.qty_hour %></p>
-      <p>Price per hour: <%= @job.price_per_hour %></p>
+      <p>Description: <%= @job.description %></p>
+      <p>Price per hour: <%= @job.price_per_hour %> USD</p>
       <p>Start Date: <%= @job.start_date %></p>
       <p>End Date: <%= @job.end_date %></p>
-      <p>Start Time: <%= @job.start_time %></p>
-      <p>End Time: <%= @job.end_time %></p>
-      <p>Description: <%= @job.description %></p>
-      <%= link_to "Apply", new_job_my_job_path(@job) %>
+      <p>Start Time: <%= @job.start_time.strftime("%k:%M") %></p>
+      <p>End Time: <%= @job.end_time.strftime("%k:%M") %></p>
+      <p>Total number of hours: <%= @job.qty_hour %></p>
+      <%= link_to "Apply here", new_job_my_job_path(@job), class: "btn btn-success" %>
     </div>
   </div>
+
+  <div style="width: 100%; height: 600px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
 </div>

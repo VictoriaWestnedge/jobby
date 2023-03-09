@@ -21,6 +21,7 @@
         <h5>My Published Jobs</h5>
         <%  @my_published_jobs.each do |my_published_job| %>
           <p><%=my_published_job.name %></p>
+          <%= link_to "Edit", edit_job_path(my_published_job) %>
           <p>Who Applied</p>
           <% my_published_job.my_jobs.each do |applicant| %>
             <table class="table">
@@ -34,8 +35,7 @@
               <% user =User.find(applicant.user_id) %>
               <tbody>
                 <tr>
-
-                  <td><%= user.nickname %></td>
+                  <td><%= link_to user.nickname, user_path(user) %></td>
                   <td><%= applicant.status.capitalize %></td>
                   <td><%= button_to "Accept", my_jobs_change_status_path(applicant, status: "aceptar"), class: "btn btn-success" %> <%= button_to "Decline", my_jobs_change_status_path(applicant, status: "cancelar"),  class: "btn btn-warning" %> </td>
                 </tr>

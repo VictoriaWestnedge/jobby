@@ -14,16 +14,11 @@ Rails.application.routes.draw do
     resources :messages, only: [:create]
   end
 
-<<<<<<< HEAD
-   post "my_jobs/change_status", to: "my_jobs#change_status"
-=======
-
-  #post "my_jobs,"
-
   resources :users, only: [ :index, :show ] do
     resources :reviews, only: [ :new, :create ]
   end
 
+   post "my_jobs/change_status", to: "my_jobs#change_status"
 
->>>>>>> master
+
 end

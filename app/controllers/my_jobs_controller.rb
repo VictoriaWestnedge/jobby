@@ -10,7 +10,7 @@ class MyJobsController < ApplicationController
 
     @job = Job.find(params[:job_id])
     @my_job = MyJob.create(user:current_user, job:@job)
-    redirect_to my_jobs_path
+    redirect_to my_jobs_path, notice: "Thanks for applying to this job"
   end
 
   def change_status

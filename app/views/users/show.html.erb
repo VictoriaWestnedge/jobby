@@ -26,11 +26,14 @@
         <h3> Create New Review </h3>
           <%= simple_form_for([@user, @review]) do |f| %>
               <%= f.input :description %>
-              <%= f.input :rating_star %>
-                <div class="star-rating">
-                  <input type="radio" name="stars" id="star-a" value="5"/>
-                  <label for="star-a"></label>
-                </div>
+              <%# <%= f.input :rating_star %>
+              <div class="star-rating">
+                    <input name="stars" id="star-a" type="radio" value="5"><label for="star-a"></label>
+                    <input name="stars" id="star-b" type="radio" value="4"><label for="star-b"></label>
+                    <input name="stars" id="star-c" type="radio" value="3"><label for="star-c"></label>
+                    <input name="stars" id="star-d" type="radio" value="2"><label for="star-d"></label>
+                    <input name="stars" id="star-e" type="radio" value="1"><label for="star-e"></label>
+              </div>
               <%= f.button :submit, class: "btn btn-primary" %>
           <% end %>
       <% end %>

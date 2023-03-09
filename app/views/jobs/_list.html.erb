@@ -2,26 +2,27 @@
   <p class="h3">
 
   <div>
-      <p class="h3">
-        <% if params[:query].blank? %>
-          <h5><%= pluralize jobs.count, "job" %> available</h5>
-        <% else %>
-          <%= pluralize jobs.count, "result" %> for <code><%= params[:query] %></code>
-        <% end %>
-      </p>
-    </div>
+    <p class="h3">
+      <% if params[:query].blank? %>
+        <h5><%= pluralize jobs.count, "job" %> available</h5>
+      <% else %>
+        <%= pluralize jobs.count, "result" %> for <code><%= params[:query] %></code>
+      <% end %>
+    </p>
+  </div>
 
     <div class="jobs mt-4 mb-4">
-    <% @jobs.each do |job| %>
-      <% if job.photo.key != nil %>
-          <%= cl_image_tag job.photo.key, height: 300, width: 300, crop: :fill %>
-        <% else %>
-      <% end %>
-          <h5><%= job.name.titleize %></h5>
-          <p><%= job.description.titleize %></p>
-          <p><%= job.city.titleize %></p>
-          <%= link_to "More Details", job_path(job), class: "btn btn-success" %>
+      <% @jobs.each do |job| %>
+
+            <% if job.photo.key != nil %>
+                <%= cl_image_tag job.photo.key, height: 300, width: 300, crop: :fill %>
+              <% else %>
+            <% end %>
+                <h5><%= job.name.titleize %></h5>
+                <p><%= job.description.titleize %></p>
+                <p><%= job.city.titleize %></p>
+                <%= link_to "More Details", job_path(job), class: "btn btn-success" %>
+
       <% end %>
     </div>
-
   </div>

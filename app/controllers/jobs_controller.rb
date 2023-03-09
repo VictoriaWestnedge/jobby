@@ -59,6 +59,6 @@ skip_before_action :authenticate_user!, only: [:index, :show]
 
   private
   def job_params
-    params.require(:job).permit(:name, :address, :description, :category, :qty_hour, :city, :price_per_hour, :start_date, :end_date, :start_time, :end_time)
+    params.require(:job).permit(:name, :address, :description, :category, :qty_hour, :city, :price_per_hour, :start_date, :end_date, :start_time, :end_time, :photo)
   end
 end

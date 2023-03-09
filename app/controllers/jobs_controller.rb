@@ -2,10 +2,13 @@ class JobsController < ApplicationController
 skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @jobs = Job.all
+    jobs_with_accepted_pending = MyJob.select(:job_id).distinct.where(status: "accepted").pluck(:job_id)
+    # @jobs = Job.all
+    @jobs =Job.where.not(id: jobs_with_accepted_pending)
 
     if params[:query].present?
-      @jobs = Job.search_by_name_and_description_and_city(params[:query])
+      @jobs = @jobs.search_by_name_and_description_and_city(params[:query])
+
     end
 
     # @markers = @jobs.geocoded.map do |job|

@@ -14,6 +14,9 @@ Rails.application.routes.draw do
     resources :messages, only: [:create]
   end
 
+<<<<<<< HEAD
+   post "my_jobs/change_status", to: "my_jobs#change_status"
+=======
 
   #post "my_jobs,"
 
@@ -22,4 +25,5 @@ Rails.application.routes.draw do
   end
 
 
+>>>>>>> master
 end

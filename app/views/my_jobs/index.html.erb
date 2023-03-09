@@ -1,55 +1,50 @@
 <div class="container">
   <div class="row">
     <div class="col">
-
       <h2>My jobs Status</h2>
-
       <% if @my_jobs.size > 0 %>
+      <hr>
         <h5>My Applied Jobs</h5>
-        <% @my_jobs.each do |my_job| %> duda
+        <% @my_jobs.each do |my_job| %>
           <p>Name: <%= my_job.job.name  %></p>
           <p>Description: <%= my_job.job.description  %></p>
-
-          <p><%= my_job.status  %></p>
-
+          <p><%= my_job.status.capitalize  %></p>
         <% end %>
       <% end %>
-    <hr>
+
+    </div>
+  <div class="row">
     </div>
     <div class="col">
       <% if @my_published_jobs.size > 0 %>
+      <hr>
         <h5>My Published Jobs</h5>
-
         <%  @my_published_jobs.each do |my_published_job| %>
           <p><%=my_published_job.name %></p>
-          <p>Personas que han aplicado a este trabajo</p>
-
+          <p>Who Applied</p>
           <% my_published_job.my_jobs.each do |applicant| %>
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Nickname</th>
-                <th scope="col">Status</th>
-                <th scope="col">Accion</th>
-              </tr>
-            </thead>
-            <% user =User.find(applicant.user_id) %>
-            <tbody>
-              <tr>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Nickname</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Accion</th>
+                </tr>
+              </thead>
+              <% user =User.find(applicant.user_id) %>
+              <tbody>
+                <tr>
 
-                <td><%= user.nickname %></td>
-                <td><%= applicant.status %></td>
-                <td><%= button_to "Aceptar", class: "btn btn-success" %> <%= button_to "Negar",  class: "btn btn-warning" %></td>
-              </tr>
-            </tbody>
-
-
-
-
+                  <td><%= user.nickname %></td>
+                  <td><%= applicant.status.capitalize %></td>
+                  <td><%= button_to "Accept", my_jobs_change_status_path(applicant, status: "aceptar"), class: "btn btn-success" %> <%= button_to "Decline", my_jobs_change_status_path(applicant, status: "cancelar"),  class: "btn btn-warning" %> </td>
+                </tr>
+              </tbody>
+              </table>
           <% end %>
         <% end %>
       <% end %>
-      </table>
+
     </div>
   </div>
 </div>

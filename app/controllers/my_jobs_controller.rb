@@ -11,4 +11,19 @@ class MyJobsController < ApplicationController
     @my_job = MyJob.create(user:current_user, job:@job)
     redirect_to jobs_path
   end
+
+  def change_status
+
+    @job=MyJob.find(params[:format])
+    if params[:status] == "aceptar"
+       @job.status = 2
+       @job.save
+     else
+       @job.status = 4
+       @job.save
+     end
+
+  end
+
+
 end

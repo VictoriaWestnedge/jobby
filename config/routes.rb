@@ -14,5 +14,5 @@ Rails.application.routes.draw do
     resources :messages, only: [:create]
   end
 
-  post "my_jobs,"
+   post "my_jobs/change_status", to: "my_jobs#change_status"
 end

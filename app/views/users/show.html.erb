@@ -27,11 +27,15 @@
           <%= simple_form_for([@user, @review]) do |f| %>
               <%= f.input :description %>
               <%= f.input :rating_star %>
+                <div class="star-rating">
+                  <input type="radio" name="stars" id="star-a" value="5"/>
+                  <label for="star-a"></label>
+                </div>
               <%= f.button :submit, class: "btn btn-primary" %>
           <% end %>
       <% end %>
 
-      <%= link_to "Back to all users", users_path %>
+      <%= link_to "Back to all users", users_path, class: "btn btn-success" %>
 
     </div>
   </div>

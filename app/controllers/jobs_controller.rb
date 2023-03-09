@@ -25,6 +25,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
   def show
     @job = Job.find(params[:id])
     @my_jobs = Job.where(user: current_user)
+    flash[:message] = "Thanks for applying to the job"
     @markers =
       [{
         lat: @job.latitude,
@@ -41,7 +42,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
     @job = Job.new(job_params)
     @job.user_id = current_user.id
     if @job.save
-      redirect_to jobs_path
+      redirect_to jobs_path, notice: "Your job has been saved. Thank you!"
     else
       render :new
     end
@@ -54,7 +55,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
   def update
     @job = Job.find(params[:id])
     @job.update(job_params)
-    redirect_to jobs_path
+    redirect_to jobs_path, notice: "Your job has been updated. Thank you!"
   end
 
   private

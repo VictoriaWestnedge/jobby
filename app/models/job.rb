@@ -8,7 +8,8 @@ class Job < ApplicationRecord
   validates :name, :description, :category, :address, :city, :qty_hour, presence: true
   validates :price_per_hour, :start_date, :end_date, :start_time, :end_time, presence: true
 
-
+  has_one_attached :photo
+  
   include PgSearch::Model
     pg_search_scope :search_by_name_and_description_and_city,
     against: [ :name, :description, :city ],
@@ -22,7 +23,7 @@ class Job < ApplicationRecord
     deliveries: 3,
     cleaning: 4,
     petsitting: 5,
-    furniture_assembly: 6
+    others: 6
     }
 
 end

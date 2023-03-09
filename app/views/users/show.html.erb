@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row mt-3 mb-4">
+    <div class="col">
+
+      <h1><%= @user.nickname %>
+      <h2><%= pluralize @user.reviews.size, "review" %></h2>
+
+      <div>
+        <% if @user.reviews.blank? %>
+          <% if current_user.id == @user.id %>
+            <p>My reviews</p>
+            <p>You currently have no reviews</p>
+          <% else %>
+            <p>Be the first to leave a review for <%= @user.nickname %></p>
+          <% end %>
+        <% else %>
+            <% @user.reviews.each do |review| %>
+              <p><%= review.rating_star %></p>
+              <p><%= review.description %></p>
+            <% end %>
+        <% end %>
+      </div>
+
+      <% if current_user.id == @user.id %>
+        <% else %>
+        <h3> Create New Review </h3>
+          <%= simple_form_for([@user, @review]) do |f| %>
+              <%= f.input :description %>
+              <%= f.input :rating_star %>
+                <div class="star-rating">
+                  <input type="radio" name="stars" id="star-a" value="5"/>
+                  <label for="star-a"></label>
+                </div>
+              <%= f.button :submit, class: "btn btn-primary" %>
+          <% end %>
+      <% end %>
+
+      <%= link_to "Back to all users", users_path, class: "btn btn-success" %>
+
+    </div>
+  </div>
+</div>

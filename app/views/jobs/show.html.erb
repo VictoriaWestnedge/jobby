@@ -2,6 +2,10 @@
   <div class="row mt-3 mb-4">
     <div class="col">
 
+    <% if @job.photo.key != nil %>
+      <%= cl_image_tag @job.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+    <% end %>
       <h5><strong><%= @job.name.titleize%></strong></h5>
       <p>Address: <%= @job.address %></p>
       <p>City: <%= @job.city %></p>
@@ -13,7 +17,15 @@
       <p>Start Time: <%= @job.start_time.strftime("%k:%M") %></p>
       <p>End Time: <%= @job.end_time.strftime("%k:%M") %></p>
       <p>Total number of hours: <%= @job.qty_hour %></p>
-      <%= button_to "Apply here", my_jobs_path, class: "btn btn-success" %>
+
+
+      <% if user_signed_in? %>
+        <% if current_user.id == @job.user_id %>
+        <% else %>
+         <%= button_to "Apply here", my_jobs_path(@job), class: "btn btn-success" %>
+        <% end %>
+      <%= link_to "Messages", chatroom_path(1, employer_id: @job.user_id), class:"btn btn-primary" %>
+      <% end %>
     </div>
   </div>
 

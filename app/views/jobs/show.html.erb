@@ -23,8 +23,9 @@
         <% if current_user.id == @job.user_id %>
         <% else %>
          <%= button_to "Apply here", job_my_jobs_path(@job), class: "btn btn-success" %>
+          <%= link_to "Messages", chatroom_path(1, employer_id: @job.user_id), class:"btn btn-primary" %>
         <% end %>
-      <%= link_to "Messages", chatroom_path(1, employer_id: @job.user_id), class:"btn btn-primary" %>
+
       <% end %>
     </div>
   </div>

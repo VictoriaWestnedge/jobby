@@ -22,6 +22,8 @@
         <%  @my_published_jobs.each do |my_published_job| %>
           <p><%=my_published_job.name %></p>
           <%= link_to "Edit", edit_job_path(my_published_job) %>
+          <%= link_to "Cancel your Publish", job_path(my_published_job), class: "btn-back", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+
           <p>Who Applied</p>
           <% my_published_job.my_jobs.each do |applicant| %>
             <table class="table">

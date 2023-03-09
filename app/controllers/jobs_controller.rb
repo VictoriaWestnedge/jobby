@@ -61,8 +61,17 @@ class JobsController < ApplicationController
       redirect_to jobs_path, notice: "Your job has been updated. Thank you!"
     end
 
-    private
-    def job_params
-      params.require(:job).permit(:name, :address, :description, :category, :qty_hour, :city, :price_per_hour, :start_date, :end_date, :start_time, :end_time, :photo)
-    end
+
+  def destroy
+    @job = Job.find(params[:id])
+    MyJob.where(job_id: @job.id).destroy_all
+
+    @job.destroy
+    redirect_to jobs_path, status: :see_other
+  end
+
+  private
+  def job_params
+    params.require(:job).permit(:name, :address, :description, :category, :qty_hour, :city, :price_per_hour, :start_date, :end_date, :start_time, :end_time, :photo)
+
   end

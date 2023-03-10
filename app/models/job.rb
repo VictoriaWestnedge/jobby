@@ -44,7 +44,7 @@ class Job < ApplicationRecord
     def end_date_after_start_date
       if start_date.nil?
         errors.add(:start_date, 'cannot be blank')
-      elsif end_date <= start_date
+      elsif end_date < start_date
       errors.add(:end_date, 'Must be after the star date')
       end
     end

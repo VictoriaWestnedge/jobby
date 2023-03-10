@@ -47,7 +47,8 @@ class JobsController < ApplicationController
       if @job.save
         redirect_to jobs_path, notice: "Your job has been saved. Thank you!"
       else
-        render :new
+
+        render :new, status: :unprocessable_entity
       end
     end
 

@@ -59,7 +59,7 @@ class JobsController < ApplicationController
     def update
       @job = Job.find(params[:id])
       @job.update(job_params)
-      redirect_to jobs_path, notice: "Your job has been updated. Thank you!"
+      redirect_to my_jobs_path, notice: "Your job has been updated. Thank you!"
     end
 
 

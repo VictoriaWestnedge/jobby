@@ -13,16 +13,16 @@
 
     <div class="jobs mt-4 mb-4">
       <% @jobs.each do |job| %>
-
             <% if job.photo.key != nil %>
                 <%= cl_image_tag job.photo.key, height: 300, width: 300, crop: :fill %>
               <% else %>
             <% end %>
+              <div class="card-infos mt-2 mb-2">
                 <h5><%= job.name.titleize %></h5>
                 <p><%= job.description.titleize %></p>
                 <p><%= job.city.titleize %></p>
                 <%= link_to "More Details", job_path(job), class: "btn btn-success" %>
-
+              </div>
       <% end %>
     </div>
   </div>

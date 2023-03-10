@@ -10,7 +10,7 @@
           <p>Name: <%= my_job.job.name  %></p>
           <p>Description: <%= my_job.job.description  %></p>
           <p><%= my_job.status.capitalize  %></p>
-          <p><%= button_to "Cancel Job", my_jobs_change_status_path(my_job, status: "pending"), class: "btn btn-success" %></p>
+          <p><%= button_to "Cancel Your Request", my_jobs_change_status_path(my_job, status: "pending"), class: "btn btn-success" %></p>
 
         <% end %>
       <% end %>

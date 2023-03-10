@@ -26,7 +26,7 @@
         <h3> Create New Review </h3>
           <%= simple_form_for([@user, @review]) do |f| %>
               <%= f.input :description %>
-              <%# <%= f.input :rating_star %>
+              <%= f.input :rating_star %>
               <div class="star-rating">
                     <input name="stars" id="star-a" type="radio" value="5"><label for="star-a"></label>
                     <input name="stars" id="star-b" type="radio" value="4"><label for="star-b"></label>

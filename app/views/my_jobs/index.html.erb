@@ -9,6 +9,8 @@
           <p>Name: <%= my_job.job.name  %></p>
           <p>Description: <%= my_job.job.description  %></p>
           <p><%= my_job.status.capitalize  %></p>
+          <p><%= button_to "Cancel Job", my_jobs_change_status_path(my_job, status: "pending"), class: "btn btn-success" %></p>
+
         <% end %>
       <% end %>
 
@@ -22,7 +24,7 @@
         <%  @my_published_jobs.each do |my_published_job| %>
           <p><%=my_published_job.name %></p>
           <%= link_to "Edit", edit_job_path(my_published_job) %>
-          <%= link_to "Cancel your Publish", job_path(my_published_job), class: "btn-back", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+          <%= link_to "Cancel", job_path(my_published_job), class: "btn-back", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
 
           <p>Who Applied</p>
           <% my_published_job.my_jobs.each do |applicant| %>
@@ -36,10 +38,12 @@
               </thead>
               <% user =User.find(applicant.user_id) %>
               <tbody>
-                <tr>
+                <tr ">
                   <td><%= link_to user.nickname, user_path(user) %></td>
                   <td><%= applicant.status.capitalize %></td>
+                  <% unless applicant.status == "accepted" ||  applicant.status == "rejected" %>
                   <td><%= button_to "Accept", my_jobs_change_status_path(applicant, status: "aceptar"), class: "btn btn-success" %> <%= button_to "Decline", my_jobs_change_status_path(applicant, status: "cancelar"),  class: "btn btn-warning" %> </td>
+                  <% end %>
                 </tr>
               </tbody>
               </table>

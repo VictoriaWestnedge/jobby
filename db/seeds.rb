@@ -1,6 +1,5 @@
 require "open-uri"
 
-if Rails.env.development?
   puts "Deleting data"
   Review.destroy_all
   MyJob.destroy_all
@@ -8,7 +7,6 @@ if Rails.env.development?
   Message.destroy_all
   User.destroy_all
   puts "Data deleted successfully"
- end
 
 puts "Creating users"
 user1 = User.create!(nickname: "Victoria", email: "vicky@gmail.com", password: "123456")

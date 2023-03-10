@@ -9,7 +9,7 @@ class Job < ApplicationRecord
   validates :price_per_hour, :start_date, :end_date, :start_time, :end_time, presence: true
 
   has_one_attached :photo
-  
+
   include PgSearch::Model
     pg_search_scope :search_by_name_and_description_and_city,
     against: [ :name, :description, :city ],
@@ -17,13 +17,13 @@ class Job < ApplicationRecord
       tsearch: { prefix: true }
     }
 
-  enum :category, {
-    painting: 1,
-    babysitting: 2,
-    deliveries: 3,
-    cleaning: 4,
-    petsitting: 5,
-    others: 6
-    }
+#  enum :category, {
+#     painting: 1,
+#     babysitting: 2,
+#     deliveries: 3,
+#     cleaning: 4,
+#     petsitting: 5,
+#     others: 6
+#     }
 
 end

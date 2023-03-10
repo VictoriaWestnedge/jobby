@@ -10,6 +10,7 @@ class Job < ApplicationRecord
 
   has_one_attached :photo
 
+
   validate :start_date_after_today
   validate :end_date_after_start_date
 
@@ -20,14 +21,14 @@ class Job < ApplicationRecord
       tsearch: { prefix: true }
     }
 
-  enum :category, {
-    painting: 1,
-    babysitting: 2,
-    deliveries: 3,
-    cleaning: 4,
-    petsitting: 5,
-    others: 6
-    }
+#  enum :category, {
+#     painting: 1,
+#     babysitting: 2,
+#     deliveries: 3,
+#     cleaning: 4,
+#     petsitting: 5,
+#     others: 6
+#     }
 
     private
 

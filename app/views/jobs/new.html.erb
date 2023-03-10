@@ -12,7 +12,7 @@
         <%= f.input :name %>
         <%= f.input :address %>
         <%= f.input :city %>
-        <%= f.input :category, collection: ['painting', 'babysitting', 'deliveries', 'cleaning', 'petsitting', 'others'], include_blank: false, label: 'Categorys' %>
+        <%= f.input :category, collection: ['Painting', 'Babysitting', 'Deliveries', 'Cleaning', 'Petsitting', 'Others'], include_blank: false, label: 'Category' %>
         <%= f.input :qty_hour %>
         <%= f.input :price_per_hour %>
         <%= f.input :start_date, html5:true %>

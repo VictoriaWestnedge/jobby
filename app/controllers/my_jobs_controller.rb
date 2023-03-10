@@ -16,11 +16,25 @@ class MyJobsController < ApplicationController
   def change_status
     @job=MyJob.find(params[:format])
     if params[:status] == "aceptar"
+
       @job.status = 2
-      @job.save
-    else
+      if @job.save
+         redirect_to my_jobs_path, notice: "You accepted"
+      end
+    end
+
+    if params[:status] == "pending"
+      @job.status = 1
+      if @job.destroy
+        redirect_to my_jobs_path, notice: "You Cancel the job"
+     end
+    end
+
+    if params[:status] == "cancelar"
       @job.status = 4
-      @job.save
+      if @job.save
+         redirect_to my_jobs_path, notice: "You Decline"
+      end
     end
   end
 

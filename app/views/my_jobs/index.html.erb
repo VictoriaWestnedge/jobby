@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container mt-3 mb-3">
   <div class="row">
     <div class="col">
       <h2>My jobs Status</h2>
@@ -24,8 +24,9 @@
         <h5>My Published Jobs</h5>
         <%  @my_published_jobs.each do |my_published_job| %>
           <p><%=my_published_job.name %></p>
-          <%= link_to "Edit", edit_job_path(my_published_job) %>
-          <%= link_to "Cancel", job_path(my_published_job), class: "btn-back", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+          <%= link_to "More details", job_path(my_published_job), class: "btn btn-primary" %>
+          <%= link_to "Edit", edit_job_path(my_published_job), class: "btn btn-secondary" %>
+          <%= link_to "Cancel", job_path(my_published_job), class: "btn btn-warning", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
 
           <p>Who Applied</p>
           <% my_published_job.my_jobs.each do |applicant| %>

@@ -6,16 +6,7 @@
         <%= f.input :name %>
         <%= f.input :address %>
         <%= f.input :city %>
-        <p>Categories</p>
-        <select class="form-control">
-        <option>painting</option>
-        <option>babysitting</option>
-        <option>deliveries</option>
-        <option>cleaning</option>
-        <option>petsitting</option>
-        <option>others</option>
-        </select>
-        <p></p>
+        <%= f.input :category, collection: ['painting', 'babysitting', 'deliveries', 'cleaning', 'petsitting', 'others'], include_blank: false, label: 'Categorys' %>
         <%= f.input :qty_hour %>
         <%= f.input :price_per_hour %>
         <%= f.input :start_date, html5:true %>

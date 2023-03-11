@@ -5,7 +5,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @user_reviews = @user.reviews.order(created_at: :desc)
     @review = Review.new
+    # @date = Date.today.strftime('%d/%m/%Y')
   end
 
   def edit
@@ -17,6 +19,8 @@ class UsersController < ApplicationController
     @user.update(user_params)
 
   end
+
+
 
   private
   def user_params

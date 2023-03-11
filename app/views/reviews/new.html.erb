@@ -3,8 +3,11 @@
     <div class="col">
       <%= simple_form_for([@user, @review]) do |f| %>
         <%= f.input :description %>
-        <%= f.input :rating_star %>
+
+      <%= f.input :rating_star, collection: (1..5).to_a, label: "Rate your experience", input_html: {data: {controller: "star-rating"}} %>
+
         <%= f.button :submit %>
+
       <% end %>
     </div>
   </div>

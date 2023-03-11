@@ -1,11 +1,19 @@
 <div class="container">
   <div class="row mt-3 mb-4">
     <div class="col">
-
       <h1><%= @user.nickname %>
-      <h2><%= pluralize @user.reviews.size, "review" %></h2>
-
+<h2></h2>
       <div>
+        <% if current_user.id == @user.id %>
+        <% else %>
+          <h3> Create New Review </h3>
+          <%= simple_form_for([@user, @review]) do |f| %>
+            <%= f.input :description %>
+            <%= f.input :rating_star, collection: (1..5).to_a, label: "Rate your experience", input_html: {data: {controller: "star-rating"}} %>
+            <%= f.button :submit, class: "btn btn-primary" %>
+          <% end %>
+        <% end %>
+          <h3><%= pluralize @user.reviews.size, "review" %></h3>
         <% if @user.reviews.blank? %>
           <% if current_user.id == @user.id %>
             <p>My reviews</p>
@@ -14,29 +22,29 @@
             <p>Be the first to leave a review for <%= @user.nickname %></p>
           <% end %>
         <% else %>
-            <% @user.reviews.each do |review| %>
-              <p><%= review.rating_star %></p>
-              <p><%= review.description %></p>
+          <% @user_reviews.each do |review| %>
+            <% case %>
+            <% when review.rating_star <2 %>
+              <i class="fa-solid fa-starer">★☆☆☆☆</i>
+            <% when review.rating_star <3 %>
+              <i class="fa-solid fa-starer">★★☆☆☆</i>
+            <% when review.rating_star <4 %>
+              <i class="fa-solid fa-starer">★★★☆☆</i>
+            <% when review.rating_star <5 %>
+              <i class="fa-solid fa-starer">★★★★☆</i>
+            <% else %>
+              <i class="fa-solid fa-starer">★★★★★</i>
             <% end %>
+
+            <p><%= review.description %>
+            <p>Rating on  <%= review.created_at.strftime('%d/%m/%Y') %></p></p>
+            <%# <%= @date %>
+            <%# <><%=review.created_at %>
+          <% end %>
         <% end %>
       </div>
 
-      <% if current_user.id == @user.id %>
-        <% else %>
-        <h3> Create New Review </h3>
-          <%= simple_form_for([@user, @review]) do |f| %>
-              <%= f.input :description %>
-              <%= f.input :rating_star %>
-              <div class="star-rating">
-                    <input name="stars" id="star-a" type="radio" value="5"><label for="star-a"></label>
-                    <input name="stars" id="star-b" type="radio" value="4"><label for="star-b"></label>
-                    <input name="stars" id="star-c" type="radio" value="3"><label for="star-c"></label>
-                    <input name="stars" id="star-d" type="radio" value="2"><label for="star-d"></label>
-                    <input name="stars" id="star-e" type="radio" value="1"><label for="star-e"></label>
-              </div>
-              <%= f.button :submit, class: "btn btn-primary" %>
-          <% end %>
-      <% end %>
+
 
       <%= link_to "Back to all users", users_path, class: "btn btn-success" %>
 

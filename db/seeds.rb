@@ -101,19 +101,19 @@ job12.save
 
 puts "Jobs created successfully"
 
-review1 = Review.create!(rating_star: 5, description: "Excellent job, really happy with her work", user: user2)
+review1 = Review.create!(rating_star: 5, description: "Excellent job, really happy with her work", user: user2, created_at: Date.new(2022,12,1))
 
-review2 = Review.create!(rating_star: 4, description: "Very happy with Nica's work, great painting", user: user2)
+review2 = Review.create!(rating_star: 4, description: "Very happy with Nica's work, great painting", user: user2, created_at: Date.new(2023,01,10))
 
-review3 = Review.create!(rating_star: 4, description: "So pleased with how everything turned out", user: user2)
+review3 = Review.create!(rating_star: 4, description: "So pleased with how everything turned out", user: user2, created_at: Date.new(2023,01,19))
 
-review4 = Review.create!(rating_star: 3, description: "Ok work, but she seemed in a bit of a rush", user: user2)
+review4 = Review.create!(rating_star: 3, description: "Ok work, but she seemed in a bit of a rush", user: user2, created_at: Date.new(2023,01,23))
 
-review5 = Review.create!(rating_star: 2, description: "She arrived late and didn't finish everything", user: user2)
+review5 = Review.create!(rating_star: 2, description: "She arrived late and didn't finish everything", user: user2, created_at: Date.new(2023,02,07))
 
-review6 = Review.create!(rating_star: 4, description: "Great work, would love to work with her again!", user: user2)
+review6 = Review.create!(rating_star: 4, description: "Great work, would love to work with her again!", user: user2, created_at: Date.new(2023,03,01))
 
-review7 = Review.create!(rating_star: 5, description: "Can't be happier, she did an amazing job painting", user: user2)
+review7 = Review.create!(rating_star: 5, description: "Can't be happier, she did an amazing job painting", user: user2, created_at: Date.new(2023,03,15))
 
 puts "reviews created successfully"
 

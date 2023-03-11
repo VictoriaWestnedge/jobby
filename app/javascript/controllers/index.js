@@ -15,3 +15,6 @@ application.register("map", MapController)
 
 import SearchJobsController from "./search_jobs_controller"
 application.register("search-jobs", SearchJobsController)
+
+import StarRatingController from "./star_rating_controller"
+application.register("star-rating", StarRatingController)

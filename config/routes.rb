@@ -20,5 +20,5 @@ Rails.application.routes.draw do
 
    post "my_jobs/change_status", to: "my_jobs#change_status"
 
-
+  resources :meetings
 end

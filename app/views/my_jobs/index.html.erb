@@ -34,14 +34,28 @@
               <thead>
                 <tr>
                   <th scope="col">Nickname</th>
+                  <th scope="col">Rating</th>
                   <th scope="col">Status</th>
                   <th scope="col">Accion</th>
                 </tr>
               </thead>
               <% user =User.find(applicant.user_id) %>
+
               <tbody>
                 <tr ">
-                  <td><%= link_to user.nickname, user_path(user) %></td>
+                  <td><%= user.nickname%></td>
+                  <% case %>
+                  <% when user.rating <2 %>
+                    <td><i><%=link_to "★☆☆☆☆", user_path(user), class:"fa-solid fa-starer-e"%></i></td>
+                  <% when user.rating <3 %>
+                    <td><i><%=link_to "★★☆☆☆", user_path(user), class:"fa-solid fa-starer-e"%></i></td>
+                  <% when user.rating <4 %>
+                  <td><i><%=link_to "★★★☆☆", user_path(user), class:"fa-solid fa-starer-e"%></i></td>
+                  <% when user.rating <5 %>
+                    <td><i><%=link_to "★★★★☆", user_path(user), class:"fa-solid fa-starer-e"%></i></td>
+                  <% else %>
+                    <td><i><%=link_to "★★★★★", user_path(user), class:"fa-solid fa-starer-e"%></i></td>
+                  <% end %>
                   <td><%= applicant.status.capitalize %></td>
                   <% unless applicant.status == "accepted" ||  applicant.status == "rejected" %>
                   <td><%= button_to "Accept", my_jobs_change_status_path(applicant, status: "aceptar"), class: "btn btn-success" %> <%= button_to "Decline", my_jobs_change_status_path(applicant, status: "cancelar"),  class: "btn btn-warning" %> </td>

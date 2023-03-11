@@ -8,6 +8,16 @@ height: 30px;
 font-size: 30px;
 color: rgb(255, 187, 0);
 }
+.fa-starer-e {
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  color: rgb(255, 187, 0);
+  }
+.fa-starer-e:hover{
+  color: rgb(242, 177, 14);
+  transition: .2s;
+}
 
 .star-rating label::before {
   content: '\2606';

@@ -9,9 +9,14 @@ class UsersController < ApplicationController
     @review = Review.new
     rating = 0
     @user_reviews.each {|user| rating += user.rating_star}
-    @comon = rating/@user_reviews.size
-    @user.rating = @comon
-    @user.save
+    if rating == 0
+      @user.rating = 0
+      @user.save
+    else
+      @comon = rating/@user_reviews.size
+      @user.rating = @comon
+      @user.save
+    end
     # @date = Date.today.strftime('%d/%m/%Y')
   end
 

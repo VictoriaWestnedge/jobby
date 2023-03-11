@@ -30,4 +30,69 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello: "Hello!"
+  AvailableJobs: "Available Jobs"
+  SearchForAJob: "Search for a job"
+  NoJobsFound: "No jobs found."
+  back: "Back"
+  moredetails: "More Details"
+  edit: "Edit"
+  cancel: "Cancel"
+  jobs: "Jobs"
+  messages: "Messages"
+  myjobs: "My Jobs"
+  calendar: "Calendar"
+  logout: "Log Out"
+  login: "Log In"
+  publishajobhere: "Publish a job here"
+  lookforajobhere: "Look for a job here"
+  yourtemporaryjobsearchplatform: "Your temporary job search platform"
+  painting: "Painting"
+  babysitting: "Babysitting"
+  deliveries: "Deliveries"
+  cleaning: "Cleaning"
+  petsitting: "Petsitting"
+  others: "Others"
+  myjobsstatus: "My jobs Status"
+  myappliedjobs: "My Applied Jobs"
+  mypublishedjobs: "My Published Jobs"
+  whoapplied: "Who Applied"
+  status: "Status"
+  accion: "Accion"
+  nickname: "Nickname"
+  rating: "Rating"
+  cancelyourequest: "Cancel Your Request"
+  monday: "Monday"
+  tuesday: "Tuesday"
+  wednesday: "Wednesday"
+  thursday: "Thursday"
+  friday: "Friday"
+  saturday: "Saturday"
+  sunday: "Sunday"
+  next: "Next"
+  previous: "Previous"
+  createmeeting: "Create a date"
+  description: "Description:"
+  start_t_d: "Start Time and Date"
+  end_t_d: "End Time and Date"
+  accept: Accept
+  decline: "Decline"
+  message: "Message"
+  helpers:
+    submit:
+      send: Send
+  chatroom: Messages
+  newjob: New Job
+  name: Name
+  address: Address
+  city: City
+  category: Category
+  qtyhour: Qty Hour
+  price: Price per hour
+  startdate: Start Date
+  enddate: End Date
+  starttime: Start Time
+  endtime: End Time
+  photo: Photo
+  createjob: Create a Job
+  updateyourjob: Update Your Job

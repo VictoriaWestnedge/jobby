@@ -2,15 +2,16 @@
 <div class="container mt-3 mb-3">
   <div class="row">
     <div class="col">
-      <h2>My jobs Status</h2>
+      <h2><%= t("myjobsstatus") %></h2>
       <% if @my_jobs.size > 0 %>
       <hr>
-        <h5>My Applied Jobs</h5>
+        <h5><%= t("myappliedjobs") %></h5>
         <% @my_jobs.each do |my_job| %>
-          <p>Name: <%= my_job.job.name  %></p>
+          <p><%= t("name")%>: <%= my_job.job.name  %></p>
+          <p><%= t("startdate") %>: <%= my_job.job.start_date.strftime('%d/%m/%Y')  %></p>
           <p>Description: <%= my_job.job.description  %></p>
           <p><%= my_job.status.capitalize  %></p>
-          <p><%= button_to "Cancel Your Request", my_jobs_change_status_path(my_job, status: "pending"), class: "btn btn-success" %></p>
+          <p><%= button_to t("cancelyourrequest"), my_jobs_change_status_path(my_job, status: "pending"), class: "btn btn-success" %></p>
 
         <% end %>
       <% end %>
@@ -21,22 +22,26 @@
     <div class="col">
       <% if @my_published_jobs.size > 0 %>
       <hr>
-        <h5>My Published Jobs</h5>
+        <h5><%= t("mypublishedjobs") %></h5>
         <%  @my_published_jobs.each do |my_published_job| %>
-          <p><%=my_published_job.name %></p>
-          <%= link_to "More details", job_path(my_published_job), class: "btn btn-primary" %>
-          <%= link_to "Edit", edit_job_path(my_published_job), class: "btn btn-secondary" %>
-          <%= link_to "Cancel", job_path(my_published_job), class: "btn btn-warning", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
 
-          <p>Who Applied</p>
+          <p><%=my_published_job.name %></p>
+          <p><%= t("startdate") %>: <%= my_published_job.start_date.strftime('%d/%m/%Y')  %></p>
+
+
+          <%= link_to t("moredetails"), job_path(my_published_job), class: "btn btn-primary" %>
+          <%= link_to t("edit"), edit_job_path(my_published_job), class: "btn btn-secondary" %>
+          <%= link_to t("cancel"), job_path(my_published_job), class: "btn btn-warning", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+
+          <p><strong><%= t("whoapplied") %></strong></p>
           <% my_published_job.my_jobs.each do |applicant| %>
             <table class="table">
               <thead>
                 <tr>
-                  <th scope="col">Nickname</th>
-                  <th scope="col">Rating</th>
-                  <th scope="col">Status</th>
-                  <th scope="col">Accion</th>
+                  <th scope="col"><%= t("nickname") %></th>
+                  <th scope="col"><%= t("rating") %></th>
+                  <th scope="col"><%= t("status") %></th>
+                  <th scope="col"><%= t("accion") %></th>
                 </tr>
               </thead>
               <% user =User.find(applicant.user_id) %>
@@ -58,15 +63,16 @@
                   <% end %>
                   <td><%= applicant.status.capitalize %></td>
                   <% unless applicant.status == "accepted" ||  applicant.status == "rejected" %>
-                  <td><%= button_to "Accept", my_jobs_change_status_path(applicant, status: "aceptar"), class: "btn btn-success" %> <%= button_to "Decline", my_jobs_change_status_path(applicant, status: "cancelar"),  class: "btn btn-warning" %> </td>
+                  <td><%= button_to t("accept"), my_jobs_change_status_path(applicant, status: "aceptar"), class: "btn btn-success" %> <%= button_to t("decline"), my_jobs_change_status_path(applicant, status: "cancelar"),  class: "btn btn-warning" %> </td>
                   <% end %>
                 </tr>
               </tbody>
               </table>
           <% end %>
+          <hr>
         <% end %>
       <% end %>
-      <%= link_to "Calendar", meetings_path, class: "btn btn-success"%>
+      <%= link_to t("calendar"), meetings_path, class: "btn btn-success"%>
     </div>
   </div>
 </div>

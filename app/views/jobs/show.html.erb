@@ -7,16 +7,16 @@
       <% else %>
     <% end %>
       <h5><strong><%= @job.name.titleize%></strong></h5>
-      <p>Address: <%= @job.address %></p>
-      <p>City: <%= @job.city %></p>
-      <p>Category: <%= @job.category %></p>
-      <p>Description: <%= @job.description %></p>
-      <p>Price per hour: <%= @job.price_per_hour %> USD</p>
-      <p>Start Date: <%= @job.start_date %></p>
-      <p>End Date: <%= @job.end_date %></p>
-      <p>Start Time: <%= @job.start_time.strftime("%k:%M") %></p>
-      <p>End Time: <%= @job.end_time.strftime("%k:%M") %></p>
-      <p>Total number of hours: <%= @job.qty_hour %></p>
+      <p><%= t("address") %>: <%= @job.address %></p>
+      <p><%= t("city") %>: <%= @job.city %></p>
+      <p><%= t('category')  %>: <%= @job.category %></p>
+      <p><%= t("description")  %>: <%= @job.description %></p>
+      <p><%= t("price")  %>:<%= @job.price_per_hour %> USD</p>
+      <p><%= t("startdate") %>: <%= @job.start_date.strftime('%d/%m/%Y') %></p>
+      <p><%= t("enddate") %>: <%= @job.end_date.strftime('%d/%m/%Y') %></p>
+      <p><%= t("starttime") %>: <%= @job.start_time.strftime("%k:%M") %></p>
+      <p><%= t("endtime")  %>: <%= @job.end_time.strftime("%k:%M") %></p>
+      <p><%= t("qtyhour")  %>: <%= @job.qty_hour %> hr</p>
 
 
       <% if user_signed_in? %>

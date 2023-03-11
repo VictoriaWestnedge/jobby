@@ -1,7 +1,7 @@
 <div class="container chatroom"
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
-  <h1>Chat Room</h1>
+  <h1><%= t("chatroom") %></h1>
 
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
@@ -15,10 +15,9 @@
 %>
   <%= f.input :content,
     label: false,
-    placeholder: "Message",
+    placeholder: t("message"),
     wrapper_html: {class: "flex-grow-1"}
   %>
-  <%= f.submit "Send", class: "btn btn-primary mb-3" %>
-  <% end %>
-<%= link_to "Back",job_path , class: "btn-back" %>
+<%= f.submit t("helpers.submit.send"), class: "btn btn-primary mb-3" %>  <% end %>
+<%= link_to t("back"),job_path , class: "btn-back" %>
 </div>

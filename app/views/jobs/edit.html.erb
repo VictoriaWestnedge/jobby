@@ -1,23 +1,23 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h2> Update Your Job </h2>
+      <h2> <%= t("updateyourjob") %> </h2>
       <%= simple_form_for @job  do |f| %>
-        <%= f.input :name %>
-        <%= f.input :address %>
-        <%= f.input :city %>
-        <%= f.input :category, collection: ['painting', 'babysitting', 'deliveries', 'cleaning', 'petsitting', 'others'], include_blank: false, label: 'Categorys' %>
-        <%= f.input :qty_hour %>
-        <%= f.input :price_per_hour %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-        <%= f.input :start_time %>
-        <%= f.input :end_time %>
-        <%= f.input :description %>
-        <%= f.input :photo, as: :file %>
-        <%= f.submit %>
+        <%= f.input :name, label: t("name")  %>
+        <%= f.input :address, label: t("address")  %>
+        <%= f.input :city, label: t("city")  %>
+        <%= f.input :category, collection: [t('painting'), t('babysitting'), t('deliveries'), t('cleaning'), t('petsitting'), t('others')], include_blank: false, label: t('category')  %>
+        <%= f.input :qty_hour, label: t("qtyhour")  %>
+        <%= f.input :price_per_hour, label: t("price")  %>
+        <%= f.input :start_date, html5:true, label: t("startdate")  %>
+        <%= f.input :end_date, html5:true, label: t("enddate")  %>
+        <%= f.input :start_time, label: t("starttime")  %>
+        <%= f.input :end_time, label: t("endtime")  %>
+        <%= f.input :description, label: t("description")  %>
+        <%= f.input :photo, as: :file, label: t("photo") %>
+        <%= f.submit t("updateyourjob"), class: "btn btn-success" %>
+
       <% end %>
-      <%= link_to "Back", my_jobs_path %>
-    </div>
+      <%= link_to t("back"), my_jobs_path %>    </div>
   </div>
 </div>

@@ -1,2 +1,87 @@
 es:
-  hello: "Hola mundo"
+  hello: "¡Hola!"
+  AvailableJobs: "Trabajos disponibles"
+  SearchForAJob: "Buscar un trabajo"
+  NoJobsFound: "No se encontraron trabajos"
+  back: "Regresar"
+  moredetails: "Mas Detalles"
+  edit: "Editar"
+  cancel: "Cancelar"
+  jobs: "Trabajos"
+  messages: "Mensajes"
+  myjobs: "Mis Trabajos"
+  calendar: "Calendario"
+  logout: "Cerrar Sesión"
+  login: "Iniciar Sesión"
+  publishajobhere: "Publica un trabajo "
+  lookforajobhere: "Busca un trabajo"
+  yourtemporaryjobsearchplatform: "Tu plataforma de búsqueda de empleo temporal"
+  painting: "Pintar"
+  babysitting: "Niñera"
+  deliveries: "Entregas"
+  cleaning: "Limpieza"
+  petsitting: "Cuidador de mascotas"
+  others: "Otros"
+  myjobsstatus: "Estados de mis trabajos"
+  myappliedjobs: "Mis trabajos aplicados"
+  mypublishedjobs: "Mis trabajos publicados"
+  whoapplied: "Quién ha aplicado"
+  status: "Estado"
+  accion: "Acción"
+  nickname: "Nombre del aplicante"
+  rating: "Clasificación"
+  cancelyourrequest: "Cancela Tu Aplicación"
+  monday: "Lunes"
+  tuesday: "Martes"
+  wednesday: "Miercoles"
+  thursday: "Jueves"
+  friday: "Viernes"
+  saturday: "Sabado"
+  sunday: "Domingo"
+  date:
+    month_names:
+      - ~
+      - Enero
+      - Febrero
+      - Marzo
+      - Abril
+      - Mayo
+      - Junio
+      - Julio
+      - Agosto
+      - Septiembre
+      - Octubre
+      - Noviembre
+      - Diciembre
+  next: "Siguiente"
+  previous: "Anterior"
+  createmeeting: "Crear una fecha"
+  date:
+    order:
+      - :day
+      - :month
+      - :year
+  description: "Descripción:"
+  start_t_d: "Hora y Fecha de Inicio"
+  end_t_d: "Hora y Fecha de Termino"
+  accept: Aceptar
+  decline: "Declinar"
+  message: "Mensaje"
+  helpers:
+    submit:
+      send: Enviar
+  chatroom: Mensajes
+  newjob: Nuevo Trabajo
+  name: Nombre
+  address: Dirección
+  city: Ciudad
+  category: Categoria
+  qtyhour: Cuantas Horas
+  price: Precio por Hora
+  startdate: Fecha de Inicio
+  enddate: Fecha de Termino
+  starttime: Hora de Inicio
+  endtime: Hora de Termino
+  photo: Foto
+  createjob: Crear un Trabajo
+  updateyourjob: Actualiza tu Trabajo

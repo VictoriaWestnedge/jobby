@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row mt-3 mb-4">
+    <div class="col">
+      <%= simple_form_for @meeting do |f| %>
+      <%= f.input :name, label: 'Description:' %>
+      <%= f.input :start_time%>
+      <%= f.input :end_time%>
+      <%= f.button :submit %>
+
+      <% end %>
+    </div>
+  </div>
+</div>

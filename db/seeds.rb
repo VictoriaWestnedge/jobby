@@ -1,6 +1,7 @@
 require "open-uri"
 
   puts "Deleting data"
+  Meeting.destroy_all
   Review.destroy_all
   MyJob.destroy_all
   Job.destroy_all

@@ -1,0 +1,31 @@
+.card-applied-jobs {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // width: 500px;
+  border-radius: 5px;
+}
+
+.card-applied-jobs > img {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-applied-jobs .card-infos {
+  padding: 16px;
+}
+
+.card-my-jobs {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // width: 500px;
+  border-radius: 5px;
+  padding: 16px;
+}
+
+
+.card h5 {
+ font-weight: bold;
+}

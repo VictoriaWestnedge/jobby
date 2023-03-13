@@ -11,7 +11,7 @@
           <p><%= t("startdate") %>: <%= my_job.job.start_date.strftime('%d/%m/%Y')  %></p>
           <p>Description: <%= my_job.job.description  %></p>
           <p><%= my_job.status.capitalize  %></p>
-          <p><%= button_to t("cancelyourrequest"), my_jobs_change_status_path(my_job, status: "pending"), class: "btn btn-success" %></p>
+          <p><%= button_to t("cancelyourequest"), my_jobs_change_status_path(my_job, status: "pending"), class: "btn btn-success" %></p>
 
         <% end %>
       <% end %>

@@ -4,7 +4,7 @@
   <div>
     <p class="h3">
       <% if params[:query].blank? %>
-        <h5><%= pluralize jobs.count, t("AvailableJobs") %></h5>
+        <h5><%= pluralize jobs.count, t("AvailableJobs")%></h5>
       <% else %>
         <%= pluralize jobs.count, "result" %> for <code><%= params[:query] %></code>
       <% end %>
@@ -15,14 +15,14 @@
       <div class="row mt-4">
         <% @jobs.each do |job| %>
         <div class="col-lg-4 col-md-4 col d-flex justify-content-center">
-          <div class="card-venues mb-4 justify-content-center">
-            <div class = "card">
+          <div class="card-venues m-4 justify-content-center">
+            <div class = "card-jobs">
               <% if job.photo.key != nil %>
                   <%= cl_image_tag job.photo.key, height: 300, width: 300, crop: :fill %>
                 <% else %>
               <% end %>
-                <div class="card-infos mt-2 mb-2">
-                  <h5><%= job.name.titleize %></h5>
+                <div class="card-jobs-info mt-2 mb-2">
+                  <h4><%= job.name.titleize %></h4>
                   <p><%= job.description.titleize %></p>
                   <p><%= job.city.titleize %></p>
                   <div class = "button_card">

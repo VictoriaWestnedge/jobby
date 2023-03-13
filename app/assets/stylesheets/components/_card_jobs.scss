@@ -1,0 +1,41 @@
+.card-jobs {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  // width: 500px;
+  border-radius: 5px;
+  border-color: rgb(231, 117, 11);
+}
+
+.card-jobs > img {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-jobs-info {
+ padding: 16px;
+}
+
+.search{
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-right: 90px;
+  margin-left: 90px;
+}
+
+.card-jobs h3{
+  text-align: center;
+  font-size: 40px;
+  color: rgb(231, 117, 11);
+}
+
+.card-jobs h4{
+  font-size: 30px;
+  color: rgb(231, 117, 11);
+}
+
+.card-jobs h5{
+  text-align: center;
+}

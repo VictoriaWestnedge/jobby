@@ -3,18 +3,20 @@
     <div class="col">
       <h3><%= t('AvailableJobs') %></h3>
         <div data-controller="search-jobs">
-          <%= form_with url: jobs_path, method: :get, html: {class:
-            "mb-4", data: {search_jobs_target: "form"}} do |f| %>
-              <%= f.text_field :query,
-                                class: "form-control",
-                                placeholder:t("SearchForAJob"),
-                                value: params[:query],
-              data: {
-                search_jobs_target: "input",
-                action: "keyup->search-jobs#update"
-                } %>
+          <div class = "search">
+            <%= form_with url: jobs_path, method: :get, html: {class:
+              "mb-4", data: {search_jobs_target: "form"}} do |f| %>
+                <%= f.text_field :query,
+                                  class: "form-control",
+                                  placeholder:t("SearchForAJob"),
+                                  value: params[:query],
+                data: {
+                  search_jobs_target: "input",
+                  action: "keyup->search-jobs#update"
+                  } %>
+          </div>
           <% end %>
-
+          <div>
           <%= link_to t("back"), root_path, class: "btn btn-primary" %>
           <%= render "list", jobs: @jobs %>
         </div>

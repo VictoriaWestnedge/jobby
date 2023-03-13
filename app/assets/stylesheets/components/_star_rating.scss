@@ -1,20 +1,17 @@
-.star-rating input {
-  display: none;
-}
 
-.fa-starer {
-width: 30px;
-height: 30px;
-font-size: 30px;
+.star-rating {
+width: 20px;
+height: 20px;
+font-size: 20px;
 color: rgb(255, 187, 0);
 }
-.fa-starer-e {
-  width: 30px;
-  height: 30px;
-  font-size: 30px;
+.star-rating-e {
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
   color: rgb(255, 187, 0);
   }
-.fa-starer-e:hover{
+.star-rating-e:hover{
   color: rgb(242, 177, 14);
   transition: .2s;
 }

@@ -53,15 +53,15 @@ en:
   cleaning: "Cleaning"
   petsitting: "Petsitting"
   others: "Others"
-  myjobsstatus: "My jobs Status"
+  myjobsstatus: "Your Jobs"
   myappliedjobs: "My Applied Jobs"
   mypublishedjobs: "My Published Jobs"
-  whoapplied: "Who Applied"
+  whoapplied: "Applicant Details"
   status: "Status"
   accion: "Accion"
   nickname: "Nickname"
   rating: "Rating"
-  cancelyourequest: "Cancel Your Request"
+  cancelyourrequest: "Cancel Your Request"
   monday: "Monday"
   tuesday: "Tuesday"
   wednesday: "Wednesday"
@@ -96,3 +96,4 @@ en:
   photo: Photo
   createjob: Create a Job
   updateyourjob: Update Your Job
+  noactionrequired: No Action Required

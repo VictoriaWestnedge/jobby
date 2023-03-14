@@ -14,10 +14,10 @@
                   search_jobs_target: "input",
                   action: "keyup->search-jobs#update"
                   } %>
+          <%= link_to t("back"), root_path, class: "btn btn-success mt-3" %>
           </div>
           <% end %>
           <div>
-          <%= link_to t("back"), root_path, class: "btn btn-primary" %>
           <%= render "list", jobs: @jobs %>
         </div>
 

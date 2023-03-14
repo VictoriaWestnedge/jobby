@@ -22,12 +22,12 @@ es:
   cleaning: "Limpieza"
   petsitting: "Cuidador de mascotas"
   others: "Otros"
-  myjobsstatus: "Estados de mis trabajos"
-  myappliedjobs: "Mis trabajos aplicados"
-  mypublishedjobs: "Mis trabajos publicados"
+  myjobsstatus: "Estados de mis Trabajos"
+  myappliedjobs: "Mis Trabajos Aplicados"
+  mypublishedjobs: "Mis Trabajos Publicados"
   whoapplied: "Quién ha aplicado"
   status: "Estado"
-  accion: "Acción"
+  action: "Acción"
   nickname: "Nombre del aplicante"
   rating: "Clasificación"
   cancelyourrequest: "Cancela Tu Aplicación"
@@ -65,6 +65,7 @@ es:
   start_t_d: "Hora y Fecha de Inicio"
   end_t_d: "Hora y Fecha de Termino"
   accept: Aceptar
+  accepted: Aceptado
   decline: "Declinar"
   message: "Mensaje"
   helpers:
@@ -85,3 +86,5 @@ es:
   photo: Foto
   createjob: Crear un Trabajo
   updateyourjob: Actualiza tu Trabajo
+  noactionrequired: Sin acción
+  pending: pendiente

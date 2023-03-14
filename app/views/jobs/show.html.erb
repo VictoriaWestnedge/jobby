@@ -1,14 +1,13 @@
 <div class="container">
   <div class="row mt-3 mb-4">
-    <div class="col">
-      <div class = "cardjob">
-        <div class>
-          <% if @job.photo.key != nil %>
-            <%= cl_image_tag @job.photo.key, height: 300, width: 400, crop: :fill %>
-            <% else %>
-          <% end %>
-            <div class = "text">
-            <h5><strong><%= @job.name.titleize%></strong></h5>
+    <div class="col-lg-6 col-md-6 col d-flex justify-content-center">
+      <div class="card-jobs">
+        <% if @job.photo.key != nil %>
+          <%= cl_image_tag @job.photo.key, height: 300, width: 400, crop: :fill %>
+          <% else %>
+        <% end %>
+          <div class = "text">
+          <h5><strong><%= @job.name.titleize%></strong></h5>
             <p><%= t("address") %>: <%= @job.address %></p>
             <p><%= t("city") %>: <%= @job.city %></p>
             <p><%= t('category')  %>: <%= @job.category %></p>
@@ -21,22 +20,21 @@
             <p><%= t("qtyhour")  %>: <%= @job.qty_hour %> hr</p>
             </div>
 
-
             <% if user_signed_in? %>
               <% if current_user.id == @job.user_id %>
               <% else %>
               <%= button_to "Apply here", job_my_jobs_path(@job), class: "btn btn-success" %>
                 <%= link_to "Messages", chatroom_path(1, employer_id: @job.user_id), class:"btn btn-primary" %>
               <% end %>
+        </div>
+      </div>
 
             <% end %>
-          <div>
           <div style="width: 100%; height: 600px;"
               data-controller="map"
               data-map-markers-value="<%= @markers.to_json %>"
               data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
           </div>
-        </div>
-     </div>
-    </div>
+
+  </div>
 </div>

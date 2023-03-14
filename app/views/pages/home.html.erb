@@ -9,14 +9,14 @@
 
   <h3 class="custom-link"><%= t("yourtemporaryjobsearchplatform") %></h3>
 
-    <div class = "options">
-    <div class = "option1">
-    <%= link_to t("publishajobhere"), new_job_path, class: "btn btn-success" %>
-    </div>
-    <div class = "option2">
-    <%= link_to t("lookforajobhere"), jobs_path, class: "btn btn-success" %>
-    </div>
+<div class="options">
+  <div class="option1">
+    <%= link_to t("publishajobhere"), new_job_path, class: "btn btn-success " %>
   </div>
+  <div class="option2">
+    <%= link_to t("lookforajobhere"), jobs_path, class: "btn btn-success " %>
+  </div>
+</div>
 
 </hgroup>
 
@@ -25,81 +25,73 @@
 
         <li ontouchstart="this.classList.toggle('hover');">
           <div class="large button card-front">
-            <%= link_to t("babysitting"), jobs_path(query: 'babysitting') %>
+            <%= link_to t("babysitting"), jobs_path(query: 'babysitting'), style: "text-decoration:none" %>
             <i class="fa fa-solid fa-baby card-icon"></i>
           </div>
 
           <div class="panel card-back">
             <i class="fa fa-solid fa-baby card-icon"></i>
             <div class="hub-info">
-              <a href="http://www.aicfchurch.org">AICFChurch.org</a>
-              <p>Listen to sermon podcasts or download church graphic design resources.</p>
+              <%= link_to t("babysittingdescription"), jobs_path(query: 'babysitting'), style: "text-decoration:none" %>
             </div>
-            <small class="clear">Updated the 4th Sunday.</small>
           </div>
         </li>
 
         <li ontouchstart="this.classList.toggle('hover');">
           <div class="large button card-front">
-            <%= link_to t("painting"), jobs_path(query: 'painting') %>
+            <%= link_to t("painting"), jobs_path(query: 'painting'), style: "text-decoration:none" %>
             <i class="fa fa-solid fa-brush card-icon"></i>
           </div>
 
           <div class="panel card-back">
             <i class="fa fa-solid fa-brush card-icon"></i>
             <div class="hub-info">
-              <a href="">Udemy.com</a>
-              <p>Join classes about Computers, Technology, Coding, Design, and Language Learning.</p>
+              <%= link_to t("paintingdescription"), jobs_path(query: 'painting'), style: "text-decoration:none" %>
             </div>
-            <small class="clear">Updated Mondays.</small>
           </div>
         </li>
 
         <li ontouchstart="this.classList.toggle('hover');">
           <div class="large button card-front">
-            <%= link_to t("cleaning"), jobs_path(query: 'cleaning') %>
+            <%= link_to t("cleaning"), jobs_path(query: 'cleaning'), style: "text-decoration:none" %>
             <i class="fa fa-solid fa-broom card-icon"></i>
           </div>
           <div class="panel card-back">
             <i class="fa fa-solid fa-broom card-icon"></i>
             <div class="hub-info">
 
-              <p>Find coding gists, cheatsheets, plugins, themes, resources, and tutorials.</p>
-              <%= link_to "ir", jobs_path(query: 'cleaning') %>
+              <%= link_to t("cleaningdescription"), jobs_path(query: 'cleaning'), style: "text-decoration:none" %>
             </div>
-            <small class="clear">Updated TTH.</small>
           </div>
         </li>
 
         <li ontouchstart="this.classList.toggle('hover');">
           <div class="large button card-front">
-            <%= link_to t("petsitting"), jobs_path(query: 'petsitting') %>
+            <%= link_to t("petsitting"), jobs_path(query: 'petsitting'), style: "text-decoration:none" %>
             <i class="fa fa-solid fa-dog card-icon"></i>
           </div>
 
           <div class="panel card-back">
             <i class="fa fa-solid fa-dog card-icon"></i>
             <div class="hub-info">
-              <a href="http://www.aaronsnowberger.com">AaronSnowberger.com</a>
-              <p>Take a look at my graphic design portfolio and contact me for design work.</p>
+
+              <%= link_to t("petsittingdescription"), jobs_path(query: 'petsitting'), style: "text-decoration:none" %>
             </div>
-            <small class="clear">Updated Saturdays.</small>
           </div>
         </li>
 
         <li ontouchstart="this.classList.toggle('hover');">
           <div class="large button card-front">
-            <%= link_to t("deliveries"), jobs_path(query: 'deliveries') %>
+            <%= link_to t("deliveries"), jobs_path(query: 'deliveries'), style: "text-decoration:none" %>
             <i class="fa fa-solid fa-box-archive card-icon"></i>
           </div>
 
           <div class="panel card-back">
             <i class="fa fa-solid fa-box-archive card-icon"></i>
             <div class="hub-info">
-              <a href="http://www.keytokorean.com">KeyToKorean.com</a>
-              <p>Take your Korean from "foreign" to fluent with vocab lists and grammar guides.</p>
+
+              <%= link_to t("deliveriesdescription"), jobs_path(query: 'deliveries'), style: "text-decoration:none" %>
             </div>
-            <small class="clear">Updated MWF.</small>
           </div>
         </li>
 
@@ -107,36 +99,22 @@
 
         <li ontouchstart="this.classList.toggle('hover');">
           <div class="large button card-front">
-            <%= link_to t("other"), jobs_path(query: 'other') %>
+            <%= link_to t("other"), jobs_path(query: 'other'), style: "text-decoration:none" %>
             <i class="fa fa-map-o card-icon"></i>
           </div>
 
           <div class="panel card-back">
             <i class="fa fa-map-o card-icon"></i>
             <div class="hub-info">
-              <a href="">KeysToAGoodLife.com</a>
-              <p>Find resources about business, family, exercise, and other various topics.</p>
+              <p><%= t("otherdescription") %></p>
+              <%#= link_to t("checkourkavaiblejobs"), jobs_path(query: 'other') %>
             </div>
-            <small class="clear">Updated monthly.</small>
           </div>
         </li>
       </ul>
     </div>
 
-    <div class="large-12 columns">
-      <div class="small-12 small-centered medium-6 medium-centered large-3 large-centered columns clients">
-        <a href="#">
-          <h6 class="text-center">Clients Click Here</h6>
-          <p class="text-center">
-            <span class="fa-stack">
-						<i class="fa fa-circle fa-stack-2x"></i>
-						<i class="fa fa-angle-right fa-inverse fa-stack-1x"></i>
-					</span>
-          </p>
-        </a>
-      </div>
-      <!-- end .clients -->
-    </div>
+
 
   </div>
 </section>

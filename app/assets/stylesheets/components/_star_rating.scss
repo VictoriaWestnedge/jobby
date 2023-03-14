@@ -1,5 +1,6 @@
 
 .fa-starer, .star-rating {
+  text-decoration: none;
 width: 20px;
 height: 20px;
 font-size: 20px;
@@ -11,7 +12,7 @@ color: rgb(255, 187, 0);
   font-size: 20px;
   color: rgb(255, 187, 0);
   }
-  .fa-starer,.star-rating-e:hover{
+  .fa-starer,.star-rating:hover{
   color: rgb(242, 177, 14);
   transition: .2s;
 }

@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   end
 
   post "my_jobs/change_status", to: "my_jobs#change_status"
+
   post '/change_locale', to: 'application#change_locale'
+
   resources :meetings
 end

@@ -1,28 +1,21 @@
 
 <!-- Hero Unit -->
 <section class="hero-unit">
-
   <div class="row">
     <div class="large-12 columns">
       <hgroup>
-  <h1>Jobby</h1>
-
-  <h3 class="custom-link"><%= t("yourtemporaryjobsearchplatform") %></h3>
-
-<div class="options">
-  <div class="option1">
-    <%= link_to t("publishajobhere"), new_job_path, class: "btn5 btn btn-success " %>
-  </div>
-  <div class="option2">
-    <%= link_to t("lookforajobhere"), jobs_path, class: "btn5 btn btn-success " %>
-  </div>
-</div>
-
-</hgroup>
-
-
+        <h1>Jobby</h1>
+        <h3 class="custom-link"><%= t("yourtemporaryjobsearchplatform") %></h3>
+        <div class="options">
+          <div class="option1">
+            <%= link_to t("publishajobhere"), new_job_path, class: "btn5 btn btn-success " %>
+          </div>
+          <div class="option2">
+            <%= link_to t("lookforajobhere"), jobs_path, class: "btn5 btn btn-success " %>
+          </div>
+        </div>
+      </hgroup>
       <ul class="small-block-grid-2 medium-block-grid-3 flip-cards">
-
         <li ontouchstart="this.classList.toggle('hover');">
           <div class="large button card-front">
             <%= link_to t("babysitting"), jobs_path(query: 'babysitting'), style: "text-decoration:none" %>
@@ -113,8 +106,5 @@
         </li>
       </ul>
     </div>
-
-
-
   </div>
 </section>

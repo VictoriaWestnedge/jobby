@@ -58,7 +58,7 @@
                   <tr>
                     <td><%=applicant.user.nickname%></td>
                     <% rating = 5 - applicant.user.rating %>
-                    <td><div class = "star-rating"><%= "#{'★' * applicant.user.rating}#{'☆' * rating}" %></div></td>
+                    <td><%= link_to"#{'★' * applicant.user.rating}#{'☆' * rating}" %></td>
                     <td> <%= applicant.status.capitalize %></td>
                     <% unless applicant.status == "accepted" ||  applicant.status == "rejected" %>
                       <td><%= button_to t("accept"), my_jobs_change_status_path(applicant, status: "aceptar"), class: "btn btn-success" %> <%= button_to t("decline"), my_jobs_change_status_path(applicant, status: "cancelar"),  class: "btn btn-warning" %> </td>

@@ -1,108 +1,142 @@
-  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
 
+<!-- Hero Unit -->
+<section class="hero-unit">
+
+  <div class="row">
+    <div class="large-12 columns">
+      <hgroup>
+  <h1>Jobby</h1>
+
+  <h3 class="custom-link"><%= t("yourtemporaryjobsearchplatform") %></h3>
+
+    <div class = "options">
+    <div class = "option1">
+    <%= link_to t("publishajobhere"), new_job_path, class: "btn btn-success" %>
     </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <%= image_tag "pintarm" %>
-        <div class="carousel-caption">
-          <h5><%= link_to t("painting"), jobs_path(query: 'painting'),class: "custom-link" %></h5>
-        </div>
-      </div>
-
-
-      <div class="carousel-item">
-        <%= image_tag "limpiarhombre" %>
-        <div class="carousel-caption">
-          <h5><%= link_to t("cleaning"), jobs_path(query: 'cleaning'),class: "custom-link" %></h5>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <%= image_tag "paseadorr" %>
-        <div class="carousel-caption">
-          <h5><%= link_to t("petsitting"), jobs_path(query: 'petsitting'),class: "custom-link" %></h5>
-        </div>
-      </div>
-
+    <div class = "option2">
+    <%= link_to t("lookforajobhere"), jobs_path, class: "btn btn-success" %>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Anterior</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Siguiente</span>
-    </button>
   </div>
 
+</hgroup>
 
-<div class="main">
-  <h1>Responsive Card Grid Layout</h1>
-  <ul class="cards">
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image"><img src="https://picsum.photos/500/300/?image=10"></div>
-        <div class="card_content">
-          <h2 class="card_title">Card Grid Layout</h2>
-          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
-          <button class="btn card_btn">Read More</button>
-        </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image"><img src="https://picsum.photos/500/300/?image=5"></div>
-        <div class="card_content">
-          <h2 class="card_title">Card Grid Layout</h2>
-          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
-          <button class="btn card_btn">Read More</button>
-        </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image"><img src="https://picsum.photos/500/300/?image=11"></div>
-        <div class="card_content">
-          <h2 class="card_title">Card Grid Layout</h2>
-          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
-          <button class="btn card_btn">Read More</button>
-        </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image"><img src="https://picsum.photos/500/300/?image=14"></div>
-        <div class="card_content">
-          <h2 class="card_title">Card Grid Layout</h2>
-          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
-          <button class="btn card_btn">Read More</button>
-        </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image"><img src="https://picsum.photos/500/300/?image=17"></div>
-        <div class="card_content">
-          <h2 class="card_title">Card Grid Layout</h2>
-          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
-          <button class="btn card_btn">Read More</button>
-        </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image"><img src="https://picsum.photos/500/300/?image=2"></div>
-        <div class="card_content">
-          <h2 class="card_title">Card Grid Layout</h2>
-          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
-          <button class="btn card_btn">Read More</button>
-        </div>
-      </div>
-    </li>
-  </ul>
-</div>
 
-<h3 class="made_by">Made with ♡</h3>
+      <ul class="small-block-grid-2 medium-block-grid-3 flip-cards">
+
+        <li ontouchstart="this.classList.toggle('hover');">
+          <div class="large button card-front">
+            <%= link_to t("babysitting"), jobs_path(query: 'babysitting') %>
+            <i class="fa fa-solid fa-baby card-icon"></i>
+          </div>
+
+          <div class="panel card-back">
+            <i class="fa fa-solid fa-baby card-icon"></i>
+            <div class="hub-info">
+              <a href="http://www.aicfchurch.org">AICFChurch.org</a>
+              <p>Listen to sermon podcasts or download church graphic design resources.</p>
+            </div>
+            <small class="clear">Updated the 4th Sunday.</small>
+          </div>
+        </li>
+
+        <li ontouchstart="this.classList.toggle('hover');">
+          <div class="large button card-front">
+            <%= link_to t("painting"), jobs_path(query: 'painting') %>
+            <i class="fa fa-solid fa-brush card-icon"></i>
+          </div>
+
+          <div class="panel card-back">
+            <i class="fa fa-solid fa-brush card-icon"></i>
+            <div class="hub-info">
+              <a href="">Udemy.com</a>
+              <p>Join classes about Computers, Technology, Coding, Design, and Language Learning.</p>
+            </div>
+            <small class="clear">Updated Mondays.</small>
+          </div>
+        </li>
+
+        <li ontouchstart="this.classList.toggle('hover');">
+          <div class="large button card-front">
+            <%= link_to t("cleaning"), jobs_path(query: 'cleaning') %>
+            <i class="fa fa-solid fa-broom card-icon"></i>
+          </div>
+          <div class="panel card-back">
+            <i class="fa fa-solid fa-broom card-icon"></i>
+            <div class="hub-info">
+
+              <p>Find coding gists, cheatsheets, plugins, themes, resources, and tutorials.</p>
+              <%= link_to "ir", jobs_path(query: 'cleaning') %>
+            </div>
+            <small class="clear">Updated TTH.</small>
+          </div>
+        </li>
+
+        <li ontouchstart="this.classList.toggle('hover');">
+          <div class="large button card-front">
+            <%= link_to t("petsitting"), jobs_path(query: 'petsitting') %>
+            <i class="fa fa-solid fa-dog card-icon"></i>
+          </div>
+
+          <div class="panel card-back">
+            <i class="fa fa-solid fa-dog card-icon"></i>
+            <div class="hub-info">
+              <a href="http://www.aaronsnowberger.com">AaronSnowberger.com</a>
+              <p>Take a look at my graphic design portfolio and contact me for design work.</p>
+            </div>
+            <small class="clear">Updated Saturdays.</small>
+          </div>
+        </li>
+
+        <li ontouchstart="this.classList.toggle('hover');">
+          <div class="large button card-front">
+            <%= link_to t("deliveries"), jobs_path(query: 'deliveries') %>
+            <i class="fa fa-solid fa-box-archive card-icon"></i>
+          </div>
+
+          <div class="panel card-back">
+            <i class="fa fa-solid fa-box-archive card-icon"></i>
+            <div class="hub-info">
+              <a href="http://www.keytokorean.com">KeyToKorean.com</a>
+              <p>Take your Korean from "foreign" to fluent with vocab lists and grammar guides.</p>
+            </div>
+            <small class="clear">Updated MWF.</small>
+          </div>
+        </li>
+
+
+
+        <li ontouchstart="this.classList.toggle('hover');">
+          <div class="large button card-front">
+            <%= link_to t("other"), jobs_path(query: 'other') %>
+            <i class="fa fa-map-o card-icon"></i>
+          </div>
+
+          <div class="panel card-back">
+            <i class="fa fa-map-o card-icon"></i>
+            <div class="hub-info">
+              <a href="">KeysToAGoodLife.com</a>
+              <p>Find resources about business, family, exercise, and other various topics.</p>
+            </div>
+            <small class="clear">Updated monthly.</small>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="large-12 columns">
+      <div class="small-12 small-centered medium-6 medium-centered large-3 large-centered columns clients">
+        <a href="#">
+          <h6 class="text-center">Clients Click Here</h6>
+          <p class="text-center">
+            <span class="fa-stack">
+						<i class="fa fa-circle fa-stack-2x"></i>
+						<i class="fa fa-angle-right fa-inverse fa-stack-1x"></i>
+					</span>
+          </p>
+        </a>
+      </div>
+      <!-- end .clients -->
+    </div>
+
+  </div>
+</section>

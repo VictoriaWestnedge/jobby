@@ -9,9 +9,18 @@
     <% end %>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-      <li class="nav-item active">
-      <%= link_to "Home", root_path, class: "nav-link"%>
+
           </li>
+          <li class="nav-item dropdown mt-2 globe">
+            <%= image_tag "mundo", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, style: "width: 20px" %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= form_with(url: "/change_locale", method: "post", local: false, authenticity_token: true, remote: true) do |f| %>
+                <%= f.select :locale, { "English" => "en", "Español" => "es" } %>
+                <%= f.submit "Change language", button: false %>
+              <% end %>
+            </div>
+          </li>
+
 
 
         <% if user_signed_in? %>
@@ -33,7 +42,9 @@
               <%= link_to t("logout"), destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
 
             </div>
-          </li>
+
+
+
         <% else %>
           <li class="nav-item">
             <%= link_to t("login"), new_user_session_path, class: "nav-link" %>

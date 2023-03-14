@@ -14,6 +14,7 @@
   background: #008bb9;
   border-color: #008bb9;
   color: white;
+  text-decoration: none;
 }
 
 .btn-warning {
@@ -49,4 +50,9 @@
 .btn-secondary:hover {
   background: #00A7E1;
   border-color: #00A7E1;
+}
+
+.btn {
+  border: 1.5px solid #000000; /* Cambia el color y grosor del borde según tus necesidades */
+  text-decoration: none; /* Quita el subrayado */
 }

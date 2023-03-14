@@ -33,6 +33,7 @@
   background: rgb(198, 2, 2);
   border-color: rgb(198, 2, 2);
   color: white;
+  text-decoration: none;
 }
 
 .btn-secondary {
@@ -44,12 +45,12 @@
   transition: 0.3s ease;
   text-decoration: none;
   width: fit-content;
-
 }
 
 .btn-secondary:hover {
   background: #00A7E1;
   border-color: #00A7E1;
+  text-decoration: none;
 }
 
 .btn5 {

@@ -1,42 +1,46 @@
 <div class="container">
-  <div class="row mt-3 mb-4">
-    <div class="col">
-      <div class = "cardjob">
-        <div class>
-          <% if @job.photo.key != nil %>
-            <%= cl_image_tag @job.photo.key, height: 300, width: 400, crop: :fill %>
-            <% else %>
-          <% end %>
-            <div class = "text">
-            <h5><strong><%= @job.name.titleize%></strong></h5>
-            <p><%= t("address") %>: <%= @job.address %></p>
-            <p><%= t("city") %>: <%= @job.city %></p>
-            <p><%= t('category')  %>: <%= @job.category %></p>
-            <p><%= t("description")  %>: <%= @job.description %></p>
-            <p><%= t("price")  %>:<%= @job.price_per_hour %> USD</p>
-            <p><%= t("startdate") %>: <%= @job.start_date.strftime('%d/%m/%Y') %></p>
-            <p><%= t("enddate") %>: <%= @job.end_date.strftime('%d/%m/%Y') %></p>
-            <p><%= t("starttime") %>: <%= @job.start_time.strftime("%k:%M") %></p>
-            <p><%= t("endtime")  %>: <%= @job.end_time.strftime("%k:%M") %></p>
-            <p><%= t("qtyhour")  %>: <%= @job.qty_hour %> hr</p>
+  <div class="row mt-4 mb-4">
+    <div class="col-lg-12 col-md-12 col d-flex justify-content-center">
+      <div class="card-jobs col-lg-7 col-md-7">
+        <% if @job.photo.key != nil %>
+          <%= cl_image_tag @job.photo.key, crop: :fill %>
+          <% else %>
+        <% end %>
+          <div class="card-jobs-info">
+            <div class="title pt-3 pb-3">
+              <h4><%= @job.name.titleize%></h4>
             </div>
-
-
+            <div class="description">
+                <p><%= t("address") %>: <%= @job.address %></p>
+                <p><%= t("city") %>: <%= @job.city %></p>
+                <p><%= t('category')  %>: <%= @job.category %></p>
+                <p><%= t("description")  %> <%= @job.description %></p>
+                <p><%= t("price")  %>: <%= @job.price_per_hour %> USD</p>
+                <%= t("startdate") %>: <%= @job.start_date.strftime('%d/%m/%Y') %>
+                <%= t("enddate") %>: <%= @job.end_date.strftime('%d/%m/%Y') %>
+                <p><%= t("starttime") %>: <%= @job.start_time.strftime("%k:%M") %>
+                <%= t("endtime")  %>: <%= @job.end_time.strftime("%k:%M") %></p>
+                <p><%= t("qtyhour")  %>: <%= @job.qty_hour %> hr</p>
+            </div>
             <% if user_signed_in? %>
               <% if current_user.id == @job.user_id %>
               <% else %>
-              <%= button_to "Apply here", job_my_jobs_path(@job), class: "btn btn-success" %>
-                <%= link_to "Messages", chatroom_path(1, employer_id: @job.user_id), class:"btn btn-primary" %>
-              <% end %>
 
-            <% end %>
-          <div>
-          <div style="width: 100%; height: 600px;"
-              data-controller="map"
-              data-map-markers-value="<%= @markers.to_json %>"
-              data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+              <div class="btn-group m-2" role="group" aria-label="Group button">
+                <%= button_to "Apply here", job_my_jobs_path(@job), class:"btn btn-success m-2" %></button>
+                <%= link_to "Send message", chatroom_path(1, employer_id: @job.user_id), class:"btn btn-secondary m-2" %></button>
+              </div>
+              <% end %>
           </div>
-        </div>
-     </div>
     </div>
+            <% end %>
+            <div class = "map2 col-lg-5 col-md-5">
+              <div style="width: 100%; height: 740px;"
+                  data-controller="map"
+                  data-map-markers-value="<%= @markers.to_json %>"
+                  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+              </div>
+            </div>
+      </div>
+  </div>
 </div>

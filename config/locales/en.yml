@@ -72,7 +72,7 @@ en:
   next: "Next"
   previous: "Previous"
   createmeeting: "Create a date"
-  description: "Description:"
+  description: "Description"
   start_t_d: "Start Time and Date"
   end_t_d: "End Time and Date"
   accept: Accept

@@ -81,6 +81,10 @@ es:
   price: Precio por Hora
   startdate: Fecha de Inicio
   enddate: Fecha de Termino
+  dates: Fecha
+  from: Desde
+  to: a
+  time: Hora
   starttime: Hora de Inicio
   endtime: Hora de Termino
   photo: Foto
@@ -88,6 +92,7 @@ es:
   updateyourjob: Actualiza tu Trabajo
   noactionrequired: Sin acción
   pending: pendiente
+  leavereview: Agregar una Opinión
   checkourkavaiblejobs: Te invitamos a revisar nuestras oportunidades laborales disponibles
   babysittingdescription: Gane dinero mientras disfruta de su tiempo con niños. Nuestros cuidadores han reportado ganancias significativas, a menudo superando las de un profesional de carrera.
   paintingdescription: Aproveche su creatividad y gane dinero mientras pinta. Los pintores en nuestra plataforma han disfrutado de la flexibilidad y han ganado un salario atractivo.
@@ -95,3 +100,4 @@ es:
   petsittingdescription: Conviértase en un paseador de perros en nuestra plataforma y gane dinero mientras disfruta del aire libre. Disfrute de horarios flexibles y ganancias significativas.
   cleaningdescription: Únase a nuestro equipo de limpieza y gane dinero mientras ayuda a mantener los hogares y oficinas limpios y ordenados.
   otherdescription: ¡Estamos ampliando nuestras categorías! Estén atentos para más oportunidades de trabajo que llegarán pronto.
+  applicantdetails: Detalles del Postulante

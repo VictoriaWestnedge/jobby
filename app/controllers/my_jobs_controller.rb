@@ -19,21 +19,21 @@ class MyJobsController < ApplicationController
 
       @job.status = 2
       if @job.save
-         redirect_to my_jobs_path, notice: "You accepted"
+         redirect_to my_jobs_path, notice: "Thank you, you have accepted"
       end
     end
 
     if params[:status] == "pending"
       @job.status = 1
       if @job.destroy
-        redirect_to my_jobs_path, notice: "You Cancel the job"
+        redirect_to my_jobs_path, notice: "Thanks, you have cancelled your request"
      end
     end
 
     if params[:status] == "cancelar"
       @job.status = 4
       if @job.save
-         redirect_to my_jobs_path, notice: "You Decline"
+         redirect_to my_jobs_path, notice: "You have declined the applicant"
       end
     end
   end

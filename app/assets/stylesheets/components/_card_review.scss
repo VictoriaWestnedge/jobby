@@ -1,0 +1,26 @@
+.cardreview {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  padding: 16px;
+  color: rgb(0, 0, 0);
+}
+
+.cardjob:hover {
+  color: rgb(0, 0, 0);
+  transition: color 1s;
+}
+
+.cardreviewcolor h3{
+  overflow: hidden;
+  color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+
+  color: rgb(255, 255, 255);
+  background-color: rgb(239, 111, 19);
+  position: center center;
+  margin-left: -14px;
+  margin-right: -14px;
+}

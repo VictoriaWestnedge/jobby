@@ -1,43 +1,55 @@
 <div class="container">
   <div class="row mt-3 mb-4">
-    <div class="col-12">
-      <h1><%= @user.nickname %>
+
+      <h3><%= @user.nickname %></h3>
       <% if current_user.id == @user.id %>
       <% else %>
-        <h3> Create New Review </h3>
+        <h4> <%= t("createnewreview") %> </h4>
         <%= simple_form_for([@user, @review]) do |f| %>
-          <%= f.input :description %>
-          <%= f.input :rating_star, collection: (1..5).to_a, label: "Rate your experience", input_html: {data: {controller: "star-rating"}} %>
-          <%= f.button :submit, class: "btn btn-primary" %>
+          <%= f.input :description, label: t("description") %>
+          <%= f.input :rating_star, collection: (1..5).to_a, label: t("rateyourexperience"), input_html: {data: {controller: "star-rating"}} %>
+          <%= f.button :submit, t("createreview"), class: "btn btn-primary" %>
         <% end %>
       <% end %>
-      <h3><%= pluralize @user.reviews.size, "review" %></h3>
+      <div class = "cardreviewcolor mt-3">
+        <h3><%= pluralize @user.reviews.size, t("review") %></h3>
+      </div>
       <% if @user.reviews.blank? %>
         <% if current_user.id == @user.id %>
-          <p>My reviews</p>
+          <p><%= t("myreview") %></p>
           <p>You currently have no reviews</p>
         <% else %>
-          <p>Be the first to leave a review for <%= @user.nickname %></p>
+          <p><%=t("bethefirsttoleaveareview")  %> <%= @user.nickname %></p>
         <% end %>
       <% else %>
 
-
-
-
-
-
-
         <% @user_reviews.each do |review| %>
-          <% rating = 5 - review.rating_star %>
-          <div class="star-rating">
-            <%="#{'★' * review.rating_star}#{'☆' * rating}"%>
+        <% rating = 5 - review.rating_star %>
+        <div class = "cardreview mt-3">
+          <div class="container ">
+            <div class="row">
+
+
+                <div class="star-rating">
+                  <%="#{'★' * review.rating_star}#{'☆' * rating}"%>
+                </div>
+                <p> <%= review.created_at.strftime('%d/%m/%Y') %></p>
+                <div class="col-10">
+                  <div class= "mt-1">
+                    <p><%= review.description%> </p>
+                  </div>
+                </div>
+                <div class="col-1 mt-1 icon">
+                  <i class=" fa-lg fa-solid fa-thumbs-up"></i>
+                </div>
+                <div class="col-1 mt-1 icon">
+                 <i class="fa-lg fa-solid fa-thumbs-down"></i>
+                </div>
+              <%# <%= @date %>
+              <%# <><%=review.created_at %>
+              </div>
+            </div>
           </div>
-
-
-          <p><%= review.description %>
-          <p>Rating on  <%= review.created_at.strftime('%d/%m/%Y') %></p></p>
-          <%# <%= @date %>
-          <%# <><%=review.created_at %>
         <% end %>
       <% end %>
       <%= link_to "Back to all users", users_path, class: "btn btn-success" %>

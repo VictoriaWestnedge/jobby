@@ -21,10 +21,21 @@
   width: 100%;
   /* Otros estilos */
 }
+
+.nav-link:hover {
+  background-color: rgb(218, 111, 11);
+  color: white;
+  text-decoration: none;
+}
+
 .margintop{
   margin-top: 80px;
 }
 
 .globe{
   padding-right: 10px;
+}
+
+.dropdown-item:hover {
+  text-decoration: none;
 }

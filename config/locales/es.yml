@@ -55,7 +55,7 @@ es:
       - Diciembre
   next: "Siguiente"
   previous: "Anterior"
-  createmeeting: "Crear una fecha"
+  createmeeting: "Crear una cita"
   date:
     order:
       - :day

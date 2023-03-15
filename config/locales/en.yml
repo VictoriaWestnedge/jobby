@@ -71,7 +71,7 @@ en:
   sunday: "Sunday"
   next: "Next"
   previous: "Previous"
-  createmeeting: "Create a date"
+  createmeeting: "Create a meeting"
   description: "Description"
   start_t_d: "Start Time and Date"
   end_t_d: "End Time and Date"

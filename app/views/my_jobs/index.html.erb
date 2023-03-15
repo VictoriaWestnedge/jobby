@@ -73,7 +73,7 @@
                       </div>
                     </td>
                     <% else %>
-                        <td><%= link_to t("leavereview"), user_path(applicant.user.id), class: "btn btn-success" %> </td>
+                      <td><%= button_to t("pay"), my_jobs_path, class: "btn btn-success" %> </td>
                     <% end %>
                   </tr>
                 <% end %>

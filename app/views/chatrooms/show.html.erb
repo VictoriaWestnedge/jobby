@@ -1,6 +1,7 @@
-<div class="container chatroom"
+<div class="container chatroom shadow bg-white w-75 p-5"
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
+  <div class = "chat">
   <h3><%= t("chatroom") %></h3>
 
   <div class="messages" data-chatroom-subscription-target="messages">
@@ -20,4 +21,5 @@
   %>
 <%= f.submit t("helpers.submit.send"), class: "btn btn-primary mb-3" %>  <% end %>
 <%= link_to t("back"),job_path , class: "btn-back" %>
+</div>
 </div>

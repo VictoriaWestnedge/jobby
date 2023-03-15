@@ -61,6 +61,51 @@
           </div>
         </li>
 
+          <li ontouchstart="this.classList.toggle('hover');">
+            <div class="large button card-front">
+              <%= link_to t("petsitting"), jobs_path(query: 'petsitting'), style: "text-decoration:none" %>
+              <i class="fa fa-solid fa-dog card-icon"></i>
+            </div>
+
+            <div class="panel card-back">
+              <i class="fa fa-solid fa-dog card-icon"></i>
+              <div class="hub-info">
+
+                <%= link_to t("petsittingdescription"), jobs_path(query: 'petsitting'), style: "text-decoration:none" %>
+              </div>
+            </div>
+          </li>
+
+          <li ontouchstart="this.classList.toggle('hover');">
+            <div class="large button card-front">
+              <%= link_to t("deliveries"), jobs_path(query: 'deliveries'), style: "text-decoration:none" %>
+              <i class="fa fa-solid fa-box-archive card-icon"></i>
+            </div>
+
+            <div class="panel card-back">
+              <i class="fa fa-solid fa-box-archive card-icon"></i>
+              <div class="hub-info">
+
+                <%= link_to t("deliveriesdescription"), jobs_path(query: 'deliveries'), style: "text-decoration:none" %>
+              </div>
+            </div>
+          </li>
+
+
+          <li ontouchstart="this.classList.toggle('hover');">
+            <div class="large button card-front">
+              <%= link_to t("other"), jobs_path(query: 'other'), style: "text-decoration:none" %>
+              <i class="fa fa-map-o card-icon"></i>
+            </div>
+
+            <div class="panel card-back">
+              <i class="fa fa-map-o card-icon"></i>
+              <div class="hub-info">
+                <p><%= t("otherdescription") %></p>
+                <%#= link_to t("checkourkavaiblejobs"), jobs_path(query: 'other') %>
+              </div>
+            </div>
+          </li>
 
 
 

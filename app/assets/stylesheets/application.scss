@@ -16,3 +16,8 @@
 @import "components/card_my_jobs";
 @import "components/btn";
 @import "components/card";
+
+
+.contenedor{
+  min-height: calc(100vh - 40px - 40px);
+}

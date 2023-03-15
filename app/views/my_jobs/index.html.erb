@@ -60,9 +60,18 @@
                     <td><%= link_to"#{'★' * applicant.user.rating}#{'☆' * rating}",user_path(applicant.user.id), class: "star-rating" %></td>
                     <td> <%= applicant.status.capitalize %></td>
                     <% unless applicant.status == "accepted" ||  applicant.status == "rejected" %>
-                      <td><%= button_to t("accept"), my_jobs_change_status_path(applicant, status: "aceptar"), class: "btn btn-success" %> <%= button_to t("decline"), my_jobs_change_status_path(applicant, status: "cancelar"),  class: "btn btn-warning" %> </td>
+                    <td>
+                      <div class="row">
+                        <div class="col-3">
+                          <%= button_to t("accept"), my_jobs_change_status_path(applicant, status: "aceptar"), class: "btn btn-success" %>
+                        </div>
+                        <div class="col-9">
+                          <%= button_to t("decline"), my_jobs_change_status_path(applicant, status: "cancelar"),  class: "btn btn-warning" %>
+                        </div>
+                      </div>
+                    </td>
                     <% else %>
-                    <td><%= t("noactionrequired")%> </td>
+                        <td><%= link_to t("leavereview"), user_path(applicant.user.id), class: "btn btn-success" %> </td>
                     <% end %>
                   </tr>
                 <% end %>

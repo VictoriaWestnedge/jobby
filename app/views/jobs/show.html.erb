@@ -1,42 +1,68 @@
 <div class="container">
-  <div class="row mt-3 mb-4">
-    <div class="col">
-      <div class = "cardjob">
-        <div class>
-          <% if @job.photo.key != nil %>
-            <%= cl_image_tag @job.photo.key, height: 300, width: 400, crop: :fill %>
-            <% else %>
-          <% end %>
-            <div class = "text">
-            <h5><strong><%= @job.name.titleize%></strong></h5>
-            <p><%= t("address") %>: <%= @job.address %></p>
-            <p><%= t("city") %>: <%= @job.city %></p>
-            <p><%= t('category')  %>: <%= @job.category %></p>
-            <p><%= t("description")  %>: <%= @job.description %></p>
-            <p><%= t("price")  %>:<%= @job.price_per_hour %> USD</p>
-            <p><%= t("startdate") %>: <%= @job.start_date.strftime('%d/%m/%Y') %></p>
-            <p><%= t("enddate") %>: <%= @job.end_date.strftime('%d/%m/%Y') %></p>
-            <p><%= t("starttime") %>: <%= @job.start_time.strftime("%k:%M") %></p>
-            <p><%= t("endtime")  %>: <%= @job.end_time.strftime("%k:%M") %></p>
-            <p><%= t("qtyhour")  %>: <%= @job.qty_hour %> hr</p>
+  <div class="row mt-4 mb-4">
+    <div class="col-lg-6 col-md-6 justify-content-center">
+      <div class="card-jobs pb-2">
+        <% if @job.photo.key != nil %>
+          <%= cl_image_tag @job.photo.key, crop: :fill %>
+        <% else %>
+        <% end %>
+        <div class="card-jobs-info p-3">
+          <div class="title p-2">
+            <h4><%= @job.name.titleize%></h4>
+          </div>
+          <div class="row description p-2">
+            <div class="col-3">
+              <p class="detail"><strong><%= t('category') %></strong>
+              <p class="detail"><strong><%= t("description") %></strong>
             </div>
 
+            <div class="col-9">
+              <span class="grey"> <%= @job.category %></span></p>
+              <span class="grey"> <%= @job.description %></span></p>
+            </div>
 
-            <% if user_signed_in? %>
-              <% if current_user.id == @job.user_id %>
-              <% else %>
-              <%= button_to "Apply here", job_my_jobs_path(@job), class: "btn btn-success" %>
-                <%= link_to "Messages", chatroom_path(1, employer_id: @job.user_id), class:"btn btn-primary" %>
-              <% end %>
+            <div class="col-3">
+              <p class="detail"><strong><%= t("address") %></strong>
+              <p class="detail"><strong><%= t("dates") %></strong>
+              <p class="detail"><strong><%= t("time") %></strong>
+              <p class="detail"><strong><%= t("qtyhour")  %></strong>
+              <p class="detail"><strong><%= t("price")  %></strong>
+            </div>
 
-            <% end %>
-          <div>
-          <div style="width: 100%; height: 600px;"
-              data-controller="map"
-              data-map-markers-value="<%= @markers.to_json %>"
-              data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+            <div class="col-9">
+              <span class="grey"> <%= @job.address %>, <%= @job.city %> </span></p>
+              <span class="grey"> <%= @job.start_date.strftime('%d/%m/%Y') %></span>&nbsp<%= t("to")%>&nbsp<span class="grey"><%= @job.end_date.strftime('%d/%m/%Y') %></span></p>
+              <span class="grey"><%= @job.start_time.strftime("%k:%M") %></span>&nbsp<%= t("to")%>&nbsp<span class="grey"><%= @job.end_time.strftime("%k:%M") %></span></p>
+              <span class="grey"> <%= @job.qty_hour %> hr</span></p>
+              <span class="grey"> <%= @job.price_per_hour %> USD</span></p>
+            </div>
+
           </div>
+          <% if user_signed_in? %>
+            <% if current_user.id == @job.user_id %>
+            <% else %>
+              <div class="row">
+                <div class="col-3">
+                  <%= button_to "Apply here", job_my_jobs_path(@job), class:"btn btn-success" %>
+                </div>
+                <div class="col-9">
+                 <%= link_to "Send message", chatroom_path(1, employer_id: @job.user_id), class:"btn btn-secondary" %>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
         </div>
-     </div>
+      </div>
+      <div class="col-3">
+      <%= link_to "Back", jobs_path, class:"btn btn-secondary mt-3" %>
+      </div>
     </div>
+    <div class="map2 col-6">
+        <div style="width: 100%; height: 690px;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+    </div>
+  </div>
 </div>

@@ -21,6 +21,13 @@
   width: 100%;
   /* Otros estilos */
 }
+
+.nav-link:hover {
+  background-color: rgb(218, 111, 11);
+  color: white;
+  text-decoration: none;
+}
+
 .margintop{
   margin-top: 100px;
 }
@@ -37,6 +44,7 @@
   margin-top: 12px;
 
 }
-.tdns {
+
+.dropdown-item:hover {
   text-decoration: none;
 }

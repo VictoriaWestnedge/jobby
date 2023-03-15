@@ -45,7 +45,7 @@ class JobsController < ApplicationController
       @job = Job.new(job_params)
       @job.user_id = current_user.id
       if @job.save
-        redirect_to jobs_path, notice: "Your job has been saved. Thank you!"
+        redirect_to my_jobs_path, notice: "Your job has been saved. Thank you!"
       else
 
         render :new, status: :unprocessable_entity
@@ -68,7 +68,7 @@ class JobsController < ApplicationController
     MyJob.where(job_id: @job.id).destroy_all
 
     @job.destroy
-    redirect_to jobs_path, status: :see_other
+    redirect_to my_jobs_path, status: :see_other
   end
 
   private

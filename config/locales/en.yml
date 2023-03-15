@@ -58,8 +58,8 @@ en:
   mypublishedjobs: "My Published Jobs"
   whoapplied: "Applicant Details"
   status: "Status"
-  accion: "Accion"
-  nickname: "Nickname"
+  accion: "Action"
+  nickname: "Name of Applicant"
   rating: "Rating"
   cancelyourrequest: "Cancel Your Request"
   monday: "Monday"
@@ -72,7 +72,7 @@ en:
   next: "Next"
   previous: "Previous"
   createmeeting: "Create a date"
-  description: "Description:"
+  description: "Description"
   start_t_d: "Start Time and Date"
   end_t_d: "End Time and Date"
   accept: Accept
@@ -90,13 +90,18 @@ en:
   qtyhour: Qty Hour
   price: Price per hour
   startdate: Start Date
+  from: From
+  to: to
+  dates: Dates
   enddate: End Date
+  time: Time
   starttime: Start Time
   endtime: End Time
   photo: Photo
   createjob: Create a Job
   updateyourjob: Update Your Job
   noactionrequired: No Action Required
+  leavereview: Leave a Review
   checkourkavaiblejobs: We invite you to check out our available job opportunities
   babysittingdescription: Earn money while enjoying your time with children. Our caregivers have reported significant earnings, often surpassing those of a career professional.
   paintingdescription: Harness your creativity and earn money while painting. Painters on our platform have enjoyed flexibility and earned an attractive salary.
@@ -110,3 +115,4 @@ en:
   myreview: My Review
   bethefirsttoleaveareview: Be the first to leave a review for
   review: Review
+  applicantdetails: Application Details

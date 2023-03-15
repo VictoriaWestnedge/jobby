@@ -1,20 +1,22 @@
 
-<!-- Hero Unit -->
-<section class="hero-unit">
-  <div class="row">
-    <div class="large-12 columns">
-      <hgroup>
-        <h1>Jobby</h1>
-        <h3 class="custom-link"><%= t("yourtemporaryjobsearchplatform") %></h3>
-        <div class="options">
-          <div class="option1">
-            <%= link_to t("publishajobhere"), new_job_path, class: "btn5 btn btn-success " %>
-          </div>
-          <div class="option2">
-            <%= link_to t("lookforajobhere"), jobs_path, class: "btn5 btn btn-success " %>
-          </div>
+<%# <!-- Hero Unit -->
+<div class="contenedorhome"> %>
+<div class="hero-unit">
+
+
+    <hgroup>
+      <h1>Jobby</h1>
+      <h3 class="custom-link"><%= t("yourtemporaryjobsearchplatform") %></h3>
+      <div class="options">
+        <div class="option1">
+          <%= link_to t("publishajobhere"), new_job_path, class: "btn5 btn btn-success " %>
         </div>
-      </hgroup>
+        <div class="option2">
+          <%= link_to t("lookforajobhere"), jobs_path, class: "btn5 btn btn-success " %>
+        </div>
+      </div>
+    </hgroup>
+
       <ul class="small-block-grid-2 medium-block-grid-3 flip-cards">
         <li ontouchstart="this.classList.toggle('hover');">
           <div class="large button card-front">
@@ -44,6 +46,7 @@
           </div>
         </li>
 
+
         <li ontouchstart="this.classList.toggle('hover');">
           <div class="large button card-front">
             <%= link_to t("cleaning"), jobs_path(query: 'cleaning'), style: "text-decoration:none" %>
@@ -58,53 +61,12 @@
           </div>
         </li>
 
-        <li ontouchstart="this.classList.toggle('hover');">
-          <div class="large button card-front">
-            <%= link_to t("petsitting"), jobs_path(query: 'petsitting'), style: "text-decoration:none" %>
-            <i class="fa fa-solid fa-dog card-icon"></i>
-          </div>
-
-          <div class="panel card-back">
-            <i class="fa fa-solid fa-dog card-icon"></i>
-            <div class="hub-info">
-
-              <%= link_to t("petsittingdescription"), jobs_path(query: 'petsitting'), style: "text-decoration:none" %>
-            </div>
-          </div>
-        </li>
-
-        <li ontouchstart="this.classList.toggle('hover');">
-          <div class="large button card-front">
-            <%= link_to t("deliveries"), jobs_path(query: 'deliveries'), style: "text-decoration:none" %>
-            <i class="fa fa-solid fa-box-archive card-icon"></i>
-          </div>
-
-          <div class="panel card-back">
-            <i class="fa fa-solid fa-box-archive card-icon"></i>
-            <div class="hub-info">
-
-              <%= link_to t("deliveriesdescription"), jobs_path(query: 'deliveries'), style: "text-decoration:none" %>
-            </div>
-          </div>
-        </li>
 
 
 
-        <li ontouchstart="this.classList.toggle('hover');">
-          <div class="large button card-front">
-            <%= link_to t("other"), jobs_path(query: 'other'), style: "text-decoration:none" %>
-            <i class="fa fa-map-o card-icon"></i>
-          </div>
 
-          <div class="panel card-back">
-            <i class="fa fa-map-o card-icon"></i>
-            <div class="hub-info">
-              <p><%= t("otherdescription") %></p>
-              <%#= link_to t("checkourkavaiblejobs"), jobs_path(query: 'other') %>
-            </div>
-          </div>
-        </li>
+
       </ul>
-    </div>
-  </div>
-</section>
+
+
+</div>

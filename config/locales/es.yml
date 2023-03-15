@@ -81,6 +81,10 @@ es:
   price: Precio por Hora
   startdate: Fecha de Inicio
   enddate: Fecha de Termino
+  dates: Fecha
+  from: Desde
+  to: a
+  time: Hora
   starttime: Hora de Inicio
   endtime: Hora de Termino
   photo: Foto

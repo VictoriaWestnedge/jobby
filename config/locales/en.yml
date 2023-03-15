@@ -90,7 +90,11 @@ en:
   qtyhour: Qty Hour
   price: Price per hour
   startdate: Start Date
+  from: From
+  to: to
+  dates: Dates
   enddate: End Date
+  time: Time
   starttime: Start Time
   endtime: End Time
   photo: Photo

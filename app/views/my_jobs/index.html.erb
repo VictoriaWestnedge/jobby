@@ -51,7 +51,7 @@
                   <th scope="col"><%= t("nickname") %></th>
                   <th scope="col"><%= t("rating") %></th>
                   <th scope="col"><%= t("status") %></th>
-                  <th scope="col"><%= t("action") %></th>
+                  <th scope="col"><%= t("action") %>
                 </tr>
               </thead>
               <tbody>
@@ -73,6 +73,7 @@
                       </div>
                     </td>
                     <% else %>
+                    <td>
                       <div class="row">
                         <div class="col-3">
                           <%= button_to t("pay"), my_jobs_path, class: "btn btn-success" %>

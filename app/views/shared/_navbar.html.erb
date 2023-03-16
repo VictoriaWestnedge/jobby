@@ -8,23 +8,7 @@
     </button>
     <% end %>
 
-    <li class="tdns">
-      <div data-controller="search-jobs">
-        <div class = "searchnav">
-          <%= form_with url: jobs_path, method: :get, html: {class:
-            "mb-4", data: {search_jobs_target: "form"}} do |f| %>
-              <%= f.text_field :query,
-                                class: "form-control",
-                                placeholder:t("SearchForAJob"),
-                                value: params[:query],
-              data: {
-                search_jobs_target: "input",
-                action: "keyup->search-jobs#update"
-                } %>
-          <% end %>
-        </div>
-      <div>
-    </li>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
 

@@ -71,7 +71,7 @@ en:
   sunday: "Sunday"
   next: "Next"
   previous: "Previous"
-  createmeeting: "Create a date"
+  createmeeting: "Create a meeting"
   description: "Description"
   start_t_d: "Start Time and Date"
   end_t_d: "End Time and Date"
@@ -102,6 +102,7 @@ en:
   updateyourjob: Update Your Job
   noactionrequired: No Action Required
   leavereview: Leave a Review
+  pay: Pay here
   checkourkavaiblejobs: We invite you to check out our available job opportunities
   babysittingdescription: Earn money while enjoying your time with children. Our caregivers have reported significant earnings, often surpassing those of a career professional.
   paintingdescription: Harness your creativity and earn money while painting. Painters on our platform have enjoyed flexibility and earned an attractive salary.
@@ -116,3 +117,25 @@ en:
   bethefirsttoleaveareview: Be the first to leave a review for
   review: Review
   applicantdetails: Application Details
+  latestpublishedworks: Latest published works
+  helpandinformation: Help and Information
+  help: Help
+  lookforwork: Look for Work
+  servicesbycity: Services by City
+  accountsetup: Account Setup
+  aboutjobby: About Jobby
+  aboutus: About Us
+  careersatjobby: Careers at Jobby
+  contactus: Contact Us
+  blog: Blog
+  morefromjobby: More from Jobby
+  mobileandjobbyapps: Mobile and Jobby apps
+  jobbyinlatam: Jobby in Latam
+  jobbyineurope: Jobby in Europe
+  followus: Follow Us
+  other: Other
+  applyhere: Apply Here
+  sendmessage: Send Message
+  pending: Pending
+  accepted: Accepted
+  rejected: Rejected

@@ -1,13 +1,18 @@
 <div class="container">
-  <div class="row mt-3 mb-4">
-    <div class="col">
-      <%= simple_form_for @meeting do |f| %>
-      <%= f.input :name, label: t("description") %>
-      <%= f.input :start_time, label: t("start_t_d")%>
-      <%= f.input :end_time, label: t("end_t_d")%>
-      <%= f.button :submit, t("createmeeting") %>
-
-      <% end %>
+  <div class="card-meeting m-5 p-5">
+    <h2> <%= t("createmeeting") %> </h2>
+    <%= simple_form_for @meeting do |f| %>
+    <%= f.input :name, label: t("description") %>
+    <div class="row">
+      <div class="col-6">
+        <%= f.input :start_time, label: t("start_t_d"), html5:true %>
+      </div>
+      <div class="col-6">
+        <%= f.input :end_time, label: t("end_t_d"), html5:true %>
+      </div>
     </div>
+
+    <%= f.button :submit, t("createmeeting"), class:"btn btn-success mt-4" %>
+    <% end %>
   </div>
 </div>

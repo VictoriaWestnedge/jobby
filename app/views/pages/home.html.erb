@@ -1,23 +1,39 @@
 
 <%# <!-- Hero Unit -->
 <div class="contenedorhome"> %>
-<div class="hero-unit">
-
-
+<div class="hero-unit ">
     <hgroup>
+
       <h1>Jobby</h1>
-      <h3 class="custom-link"><%= t("yourtemporaryjobsearchplatform") %></h3>
+
       <div class="options">
         <div class="option1">
-          <%= link_to t("publishajobhere"), new_job_path, class: "btn5 btn btn-success " %>
+          <%= link_to t("publishajobhere"), new_job_path, class: "btn5 btn btn-success", style: "text-decoration:none; font-size: 20px;"%>
         </div>
         <div class="option2">
-          <%= link_to t("lookforajobhere"), jobs_path, class: "btn5 btn btn-success " %>
+          <%= link_to t("lookforajobhere"), jobs_path, class: "btn5 btn btn-success ", style: "text-decoration:none; font-size: 20px;" %>
         </div>
       </div>
-    </hgroup>
 
-      <ul class="small-block-grid-2 medium-block-grid-3 flip-cards">
+      <div data-controller="search-jobs">
+        <div class = "searchhome">
+          <%= form_with url: jobs_path, method: :get, html: {class:
+            "mb-4", data: {search_jobs_target: "form"}} do |f| %>
+              <%= f.text_field :query,
+                                class: "form-control",
+                                placeholder:t("SearchForAJob"),
+                                value: params[:query],
+              data: {
+                search_jobs_target: "input",
+                action: "keyup->search-jobs#update"
+                }%>
+
+          <% end %>
+        </div>
+     </div>
+
+
+      <ul class="small-block-grid-2 medium-block-grid-3 flip-cards marbotmen">
         <li ontouchstart="this.classList.toggle('hover');">
           <div class="large button card-front">
             <%= link_to t("babysitting"), jobs_path(query: 'babysitting'), style: "text-decoration:none" %>
@@ -27,7 +43,7 @@
           <div class="panel card-back">
             <i class="fa fa-solid fa-baby card-icon"></i>
             <div class="hub-info">
-              <%= link_to t("babysittingdescription"), jobs_path(query: 'babysitting'), style: "text-decoration:none" %>
+              <%= link_to t("babysittingdescription"), jobs_path(query: 'babysitting'), style: "text-decoration:none; font-size: 20px;" %>
             </div>
           </div>
         </li>
@@ -41,7 +57,7 @@
           <div class="panel card-back">
             <i class="fa fa-solid fa-brush card-icon"></i>
             <div class="hub-info">
-              <%= link_to t("paintingdescription"), jobs_path(query: 'painting'), style: "text-decoration:none" %>
+              <%= link_to t("paintingdescription"), jobs_path(query: 'painting'), style: "text-decoration:none; font-size: 20px;" %>
             </div>
           </div>
         </li>
@@ -56,7 +72,7 @@
             <i class="fa fa-solid fa-broom card-icon"></i>
             <div class="hub-info">
 
-              <%= link_to t("cleaningdescription"), jobs_path(query: 'cleaning'), style: "text-decoration:none" %>
+              <%= link_to t("cleaningdescription"), jobs_path(query: 'cleaning'), style: "text-decoration:none; font-size: 20px;" %>
             </div>
           </div>
         </li>
@@ -71,7 +87,7 @@
               <i class="fa fa-solid fa-dog card-icon"></i>
               <div class="hub-info">
 
-                <%= link_to t("petsittingdescription"), jobs_path(query: 'petsitting'), style: "text-decoration:none" %>
+                <%= link_to t("petsittingdescription"), jobs_path(query: 'petsitting'), style: "text-decoration:none; font-size: 20px;" %>
               </div>
             </div>
           </li>
@@ -86,7 +102,7 @@
               <i class="fa fa-solid fa-box-archive card-icon"></i>
               <div class="hub-info">
 
-                <%= link_to t("deliveriesdescription"), jobs_path(query: 'deliveries'), style: "text-decoration:none" %>
+                <%= link_to t("deliveriesdescription"), jobs_path(query: 'deliveries'), style: "text-decoration:none; font-size: 20px;" %>
               </div>
             </div>
           </li>
@@ -101,17 +117,38 @@
             <div class="panel card-back">
               <i class="fa fa-map-o card-icon"></i>
               <div class="hub-info">
-                <p><%= t("otherdescription") %></p>
+                <%= link_to t("otherdescription"), jobs_path(query: 'otros'),style: "text-decoration:none; font-size: 20px;" %>
                 <%#= link_to t("checkourkavaiblejobs"), jobs_path(query: 'other') %>
               </div>
             </div>
           </li>
-
-
-
-
-
       </ul>
-
-
+    </hgroup>
+</div>
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="div mt-3">
+      <h2><%= t("latestpublishedworks") %></h2>
+    </div>
+  <% @jobs.take(3).each do |job| %>
+    <div class="col-lg-4 col-md-4 col d-flex justify-content-center">
+      <div class="card-venues m-4 justify-content-center">
+        <div class = "card-jobs">
+          <% if job.photo.key != nil %>
+            <%= cl_image_tag job.photo.key, height: 300, width: 300, crop: :fill %>
+          <% else %>
+          <% end %>
+            <div class="card-jobs-info mt-2 mb-3">
+              <h4><%= job.name.titleize %></h4>
+              <p><%= job.description.titleize %></p>
+              <p><%= job.city.titleize %></p>
+              <div class = "button_card">
+              <%= link_to t("moredetails"), job_path(job), class: "btn btn-success" %>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>

@@ -13,8 +13,8 @@ es:
   calendar: "Calendario"
   logout: "Cerrar Sesión"
   login: "Iniciar Sesión"
-  publishajobhere: "Publica un Trabajo "
-  lookforajobhere: "Busca un Trabajo"
+  publishajobhere: "Publicar un Trabajo "
+  lookforajobhere: "Buscar un Trabajo"
   yourtemporaryjobsearchplatform: "Tu plataforma de búsqueda de empleo temporal"
   painting: "Pintar"
   babysitting: "Niñera"
@@ -55,13 +55,13 @@ es:
       - Diciembre
   next: "Siguiente"
   previous: "Anterior"
-  createmeeting: "Crear una fecha"
+  createmeeting: "Crear una cita"
   date:
     order:
       - :day
       - :month
       - :year
-  description: "Descripción:"
+  description: "Descripción"
   start_t_d: "Hora y Fecha de Inicio"
   end_t_d: "Hora y Fecha de Termino"
   accept: Aceptar
@@ -76,8 +76,8 @@ es:
   name: Nombre
   address: Dirección
   city: Ciudad
-  category: Categoria
-  qtyhour: Cuantas Horas
+  category: Categoría
+  qtyhour: Horas Totales
   price: Precio por Hora
   startdate: Fecha de Inicio
   enddate: Fecha de Termino
@@ -93,6 +93,7 @@ es:
   noactionrequired: Sin acción
   pending: pendiente
   leavereview: Agregar una Opinión
+  pay: Pagar aquí
   checkourkavaiblejobs: Te invitamos a revisar nuestras oportunidades laborales disponibles
   babysittingdescription: Gane dinero mientras disfruta de su tiempo con niños. Nuestros cuidadores han reportado ganancias significativas, a menudo superando las de un profesional de carrera.
   paintingdescription: Aproveche su creatividad y gane dinero mientras pinta. Los pintores en nuestra plataforma han disfrutado de la flexibilidad y han ganado un salario atractivo.
@@ -107,3 +108,25 @@ es:
   bethefirsttoleaveareview: Sé el primero en dejar una reseña a
   review: Reseñas
   applicantdetails: Detalles del Postulante
+  other: Otros
+  latestpublishedworks: Últimos trabajos publicados
+  helpandinformation: Ayuda y Información
+  help: Ayuda
+  lookforwork: Buscar un Trabajo
+  servicesbycity: Servicios por Ciudad
+  accountsetup: Configuración de Cuenta
+  aboutjobby: Sobre Jobby
+  aboutus: Sobre Nosotros
+  careersatjobby: Carreras en Jobby
+  contactus: Contacto
+  blog: Blog
+  morefromjobby: Más de Jobby
+  mobileandjobbyapps: Apps de Mobile
+  jobbyinlatam: Jobby en Latam
+  jobbyineurope: Jobby en Europa
+  followus: Síguenos
+  applyhere: Postular
+  sendmessage: Enviar Mensaje
+  pending: Pendiente
+  accepted: Aceptado
+  rejected: Rechazado

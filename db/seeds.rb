@@ -16,13 +16,13 @@ user1.photo.attach(io: file, filename: "vicky.png", content_type: "image/png")
 user1.save
 puts "#{user1.nickname} created successfully"
 
-user2 = User.new(nickname: "Nica", email: "nica@gmail.com", password: "123456", rating:4)
+user2 = User.new(nickname: "Nica", email: "nica@gmail.com", password: "123456")
 file = URI.open("https://avatars.githubusercontent.com/u/122623098?v=4")
 user2.photo.attach(io: file, filename: "nica.png", content_type: "image/png")
 user2.save
 puts "#{user2.nickname} created successfully"
 
-user3 = User.new(nickname: "Fernando", email: "fernando@gmail.com", password: "123456")
+user3 = User.new(nickname: "Fernando", email: "fernando@gmail.com", password: "123456", rating:4)
 file = URI.open("https://avatars.githubusercontent.com/u/108149366?v=4")
 user3.photo.attach(io: file, filename: "fdo.png", content_type: "image/png")
 user3.save

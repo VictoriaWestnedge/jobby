@@ -141,7 +141,7 @@
           <% end %>
             <div class="card-jobs-info mt-2 mb-3">
               <h4><%= job.name.titleize %></h4>
-              <p><%= job.description.titleize %></p>
+              <p><%= job.description.capitalize.capitalize.truncate(100) %></p>
               <p><%= job.city.titleize %></p>
               <div class = "button_card">
               <%= link_to t("moredetails"), job_path(job), class: "btn btn-success" %>

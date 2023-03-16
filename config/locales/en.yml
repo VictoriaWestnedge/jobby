@@ -117,9 +117,7 @@ en:
   bethefirsttoleaveareview: Be the first to leave a review for
   review: Review
   applicantdetails: Application Details
-
   latestpublishedworks: Latest published works
-
   helpandinformation: Help and Information
   help: Help
   lookforwork: Look for Work
@@ -135,4 +133,9 @@ en:
   jobbyinlatam: Jobby in Latam
   jobbyineurope: Jobby in Europe
   followus: Follow Us
-
+  other: Other
+  applyhere: Apply Here
+  sendmessage: Send Message
+  pending: Pending
+  accepted: Accepted
+  rejected: Rejected

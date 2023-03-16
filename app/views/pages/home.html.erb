@@ -126,9 +126,11 @@
     </hgroup>
 </div>
 <hr>
-<div class="container ">
+<div class="container">
   <div class="row">
-  <h2><%= t("latestpublishedworks") %></h2>
+    <div class="div mt-3">
+      <h2><%= t("latestpublishedworks") %></h2>
+    </div>
   <% @jobs.take(3).each do |job| %>
     <div class="col-lg-4 col-md-4 col d-flex justify-content-center">
       <div class="card-venues m-4 justify-content-center">
@@ -137,7 +139,7 @@
             <%= cl_image_tag job.photo.key, height: 300, width: 300, crop: :fill %>
           <% else %>
           <% end %>
-            <div class="card-jobs-info mt-2 mb-2">
+            <div class="card-jobs-info mt-2 mb-3">
               <h4><%= job.name.titleize %></h4>
               <p><%= job.description.titleize %></p>
               <p><%= job.city.titleize %></p>

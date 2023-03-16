@@ -20,7 +20,15 @@
                   </div>
                   <p><%= t("startdate") %>: <%= my_job.job.start_date.strftime('%d/%m/%Y')  %></p>
                   <p><%= my_job.job.description  %></p>
-                  <p><%= my_job.status.capitalize  %></p>
+
+                  <%if my_job.status == "pending" %>
+                      <p><%= t("pending") %></p>
+                  <%elsif my_job.status == "accepted" %>
+                       <p><%= t("accepted") %></p>
+                  <%elsif my_job.status == "rejected" %>
+                       <p><%= t("rejected") %></p>
+                  <% end %>
+                  <%# <p><%= my_job.status.capitalize  %>
                   <p><%= button_to t("cancelyourrequest"), my_jobs_change_status_path(my_job, status: "pending"), class: "btn btn-warning" %></p>
                 </div>
             </div>
@@ -60,7 +68,14 @@
                     <td><%=applicant.user.nickname%></td>
                     <% rating = 5 - applicant.user.rating %>
                     <td><%= link_to"#{'★' * applicant.user.rating}#{'☆' * rating}",user_path(applicant.user.id), class: "star-rating" %></td>
-                    <td> <%= applicant.status.capitalize %></td>
+                     <%if applicant.status == "pending" %>
+                        <td><%= t("pending") %></td>
+                      <%elsif applicant.status == "accepted" %>
+                       <td><%= t("accepted") %></td>
+                      <%elsif applicant.status == "rejected" %>
+                       <td><%= t("rejected") %></td>
+                      <% end %>
+
                     <% unless applicant.status == "accepted" ||  applicant.status == "rejected" %>
                     <td>
                       <div class="row">

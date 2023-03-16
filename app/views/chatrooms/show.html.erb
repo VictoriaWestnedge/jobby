@@ -1,4 +1,4 @@
-<div class="container chatroom shadow bg-white w-75 p-5"
+<div class="container chatroom"
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
   <div class = "chat">
@@ -19,7 +19,7 @@
     placeholder: t("message"),
     wrapper_html: {class: "flex-grow-1"}
   %>
-<%= f.submit t("helpers.submit.send"), class: "btn btn-primary mb-3" %>  <% end %>
-<%= link_to t("back"),job_path , class: "btn-back" %>
+<%= f.submit t("helpers.submit.send"), class: "btn btn-success mb-3" %>  <% end %>
+<%= link_to t("back"),job_path , class: "btn btn-secondary ml-2" %>
 </div>
 </div>

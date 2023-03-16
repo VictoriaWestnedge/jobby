@@ -62,7 +62,6 @@ class JobsController < ApplicationController
       redirect_to my_jobs_path, notice: "Your job has been updated. Thank you!"
     end
 
-
   def destroy
     @job = Job.find(params[:id])
     MyJob.where(job_id: @job.id).destroy_all

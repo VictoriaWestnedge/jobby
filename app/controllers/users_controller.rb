@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @review = Review.new
     rating = 0
     @user_reviews.each {|user| rating += user.rating_star}
-    if rating == 0
+    if rating == nil
       @user.rating = 0
       @user.save
     else

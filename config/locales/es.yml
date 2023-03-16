@@ -13,8 +13,8 @@ es:
   calendar: "Calendario"
   logout: "Cerrar Sesión"
   login: "Iniciar Sesión"
-  publishajobhere: "Publica un Trabajo "
-  lookforajobhere: "Busca un Trabajo"
+  publishajobhere: "Publicar un Trabajo "
+  lookforajobhere: "Buscar un Trabajo"
   yourtemporaryjobsearchplatform: "Tu plataforma de búsqueda de empleo temporal"
   painting: "Pintar"
   babysitting: "Niñera"
@@ -61,7 +61,7 @@ es:
       - :day
       - :month
       - :year
-  description: "Descripción:"
+  description: "Descripción"
   start_t_d: "Hora y Fecha de Inicio"
   end_t_d: "Hora y Fecha de Termino"
   accept: Aceptar
@@ -76,8 +76,8 @@ es:
   name: Nombre
   address: Dirección
   city: Ciudad
-  category: Categoria
-  qtyhour: Cuantas Horas
+  category: Categoría
+  qtyhour: Horas Totales
   price: Precio por Hora
   startdate: Fecha de Inicio
   enddate: Fecha de Termino
@@ -125,3 +125,5 @@ es:
   jobbyinlatam: Jobby en Latam
   jobbyineurope: Jobby en Europa
   followus: Síguenos
+  applyhere: Postular
+  sendmessage: Enviar Mensaje

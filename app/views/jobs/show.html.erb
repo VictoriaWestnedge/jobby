@@ -43,10 +43,10 @@
             <% else %>
               <div class="row">
                 <div class="col-3">
-                  <%= button_to "Apply here", job_my_jobs_path(@job), class:"btn btn-success" %>
+                  <%= button_to t("applyhere"), job_my_jobs_path(@job), class:"btn btn-success" %>
                 </div>
                 <div class="col-9">
-                 <%= link_to "Send message", chatroom_path(1, employer_id: @job.user_id), class:"btn btn-secondary" %>
+                 <%= link_to t("sendmessage"), chatroom_path(1, employer_id: @job.user_id), class:"btn btn-secondary" %>
                 </div>
               </div>
             <% end %>
@@ -54,7 +54,7 @@
         </div>
       </div>
       <div class="col-3">
-      <%= link_to "Back", jobs_path, class:"btn btn-secondary mt-3" %>
+      <%= link_to t("back"), jobs_path, class:"btn btn-secondary mt-3" %>
       </div>
     </div>
     <div class="map2 col-6">

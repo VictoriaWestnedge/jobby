@@ -20,7 +20,7 @@
           <%= form_with url: jobs_path, method: :get, html: {class:
             "mb-4", data: {search_jobs_target: "form"}} do |f| %>
               <%= f.text_field :query,
-                                class: "form-control",
+                                class: "custom-hei",
                                 placeholder:t("SearchForAJob"),
                                 value: params[:query],
               data: {

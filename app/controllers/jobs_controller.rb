@@ -2,15 +2,35 @@ class JobsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+
+
+
     jobs_with_accepted_pending = MyJob.select(:job_id).distinct.where(status: "accepted").pluck(:job_id)
     # @jobs = Job.all
     @jobs =Job.where.not(id: jobs_with_accepted_pending)
 
-    if params[:query].present?
-      @jobs = @jobs.search_by_name_and_description_and_city(params[:query])
 
-    end
+    @jobs = @jobs.search_by_name_and_description_and_city(params[:category]) if params[:category].present?
 
+      @jobs = @jobs.search_by_name_and_description_and_city(params[:query]) if params[:query].present?
+
+
+      @jobs = @jobs.search_by_name_and_description_and_city(params[:city]) if params[:city].present?
+
+      @jobs = @jobs.search_by_name_and_description_and_city(params[:price]) if params[:price].present?
+
+      @jobs = @jobs.search_by_name_and_description_and_city(params[:date]) if params[:date].present?
+
+
+
+
+    # @tournaments = policy_scope(Tournament.all)
+    # @tournaments = policy_scope(@tournaments.where(category: params[:category])) if params[:category].present?
+    # @tournaments = policy_scope(@tournaments.where(type: params[:type])) if params[:type].present?
+    # @tournaments = policy_scope(@tournaments.where(type: params[:type])) if params[:type].present?
+    # @tournaments = policy_scope(@tournaments.where(“price <= (?)“, params[:max_price])) if params[:max_price].present?
+    # @tournaments = policy_scope(@tournaments.where(“start_date >= (?)“, params[:start_date])) if params[:start_date].present?
+    # @tournaments = policy_scope(@tournaments.where(“end_date <= (?)“, params[:end_date])) if params[:end_date].present?
       # @markers = @jobs.geocoded.map do |job|
       #   {
       #     lat: job.latitude,

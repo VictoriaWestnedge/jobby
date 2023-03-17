@@ -40,7 +40,7 @@
 
                       <%= form_with url: jobs_path, method: :get, html: {class: "mb-4", data: {search_jobs_target: "form"}} do |f| %>
                       <%= f.hidden_field :locale, value: params[:locale] %>
-                      <%= f.select :category, options_for_select([["categorias:",""],[t('painting'), 'painting'], [t('babysitting'), 'babysitting'], [t('deliveries'), 'deliveries'], [t('cleaning'), 'cleaning'], [t('petsitting'), 'petsitting'], [t('others'), 'others']], params[:category]), {}, class: "custom-width-he" %>
+                      <%= f.select :category, options_for_select([[t("category"),""],[t('painting'), 'painting'], [t('babysitting'), 'babysitting'], [t('deliveries'), 'deliveries'], [t('cleaning'), 'cleaning'], [t('petsitting'), 'petsitting'], [t('others'), 'others']], params[:category]), {}, class: "custom-width-he" %>
                       <%= f.text_field :city, class: "custom-width", placeholder: t("city"), value: params[:city] %>
                       <%= f.number_field :price, class: "custom-width", placeholder: t("price"), value: params[:price] %>
                       <%= f.date_field :date, class: "custom-width-hed", placeholder: t("date"), value: params[:date] %>

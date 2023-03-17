@@ -92,7 +92,7 @@ es:
   updateyourjob: Actualiza tu Trabajo
   noactionrequired: Sin acción
   pending: pendiente
-  leavereview: Agregar una Opinión
+  leavereview: Dejar una Opinión
   pay: Pagar aquí
   checkourkavaiblejobs: Te invitamos a revisar nuestras oportunidades laborales disponibles
   babysittingdescription: Gane dinero mientras disfruta de su tiempo con niños. Nuestros cuidadores han reportado ganancias significativas, a menudo superando las de un profesional de carrera.
@@ -134,3 +134,10 @@ es:
   advancedsearch: Búsqueda Avanzada
   search: Buscar
   cleanfilters: Limpiar Filtros
+  thanksforapplying: Gracias por postular
+  youhaveaccepted: Gracias, aceptaste
+  youhavecancelled: Gracias, cancelaste tu solicitud
+  youhavedeclined: Rechazaste al postulante
+  jobsaved: Publicamos tu nuevo trabajo. Gracias!
+  jobupdated: Actualizamos tu trabajo. Gracias!
+  thankyoureview: Gracias por dejar una reseña

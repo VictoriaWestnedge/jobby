@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.user = @user
     if @review.save
-      redirect_to user_path(@user), notice: "Thank you for leaving a review"
+      redirect_to user_path(@user), notice: t("thankyoureview")
     else
       render "users/show", status: :unprocessable_entity
     end

@@ -17,7 +17,25 @@
             </div>
 
             <div class="col-9">
-              <span class="grey"> <%= @job.category %></span></p>
+              <%if  @job.category == "Painting" %>
+                <span class="grey"> <%= t("painting")  %></span></p>
+              <% end %>
+              <%if  @job.category == "Babysitting" %>
+                <span class="grey"> <%= t("babysitting")  %></span></p>
+              <% end %>
+              <%if  @job.category == "Deliveries" %>
+                <span class="grey"> <%= t("deliveries")  %></span></p>
+              <% end %>
+              <%if  @job.category == "Cleaning" %>
+                <span class="grey"> <%= t("cleaning")  %></span></p>
+              <% end %>
+              <%if  @job.category == "Petsitting" %>
+                <span class="grey"> <%= t("petsitting")  %></span></p>
+              <% end %>
+              <%if  @job.category == "Others" %>
+                <span class="grey"> <%= t("other")  %></span></p>
+              <% end %>
+              
               <span class="grey"> <%= @job.description %></span></p>
             </div>
 

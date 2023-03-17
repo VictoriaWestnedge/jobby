@@ -10,7 +10,7 @@ class MyJobsController < ApplicationController
 
     @job = Job.find(params[:job_id])
     @my_job = MyJob.create(user:current_user, job:@job)
-    redirect_to my_jobs_path, notice: "Thanks for applying to this job"
+    redirect_to my_jobs_path, notice: t("thanksforapplying")
   end
 
   def change_status
@@ -19,21 +19,21 @@ class MyJobsController < ApplicationController
 
       @job.status = 2
       if @job.save
-         redirect_to my_jobs_path, notice: "Thank you, you have accepted"
+         redirect_to my_jobs_path, notice: t("youhaveaccepted")
       end
     end
 
     if params[:status] == "pending"
       @job.status = 1
       if @job.destroy
-        redirect_to my_jobs_path, notice: "Thanks, you have cancelled your request"
+        redirect_to my_jobs_path, notice: t("youhavecancelled")
      end
     end
 
     if params[:status] == "cancelar"
       @job.status = 4
       if @job.save
-         redirect_to my_jobs_path, notice: "You have declined the applicant"
+         redirect_to my_jobs_path, notice: t("youhavedeclined")
       end
     end
   end

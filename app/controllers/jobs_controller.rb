@@ -48,7 +48,7 @@ class JobsController < ApplicationController
     def show
       @job = Job.find(params[:id])
       @my_jobs = Job.where(user: current_user)
-      flash[:message] = "Thanks for applying to the job"
+      flash[:message] = t("thanksforapplying")
       @markers =
         [{
           lat: @job.latitude,
@@ -65,7 +65,7 @@ class JobsController < ApplicationController
       @job = Job.new(job_params)
       @job.user_id = current_user.id
       if @job.save
-        redirect_to my_jobs_path, notice: "Your job has been saved. Thank you!"
+        redirect_to my_jobs_path, notice: t("jobsaved")
       else
 
         render :new, status: :unprocessable_entity
@@ -79,7 +79,7 @@ class JobsController < ApplicationController
     def update
       @job = Job.find(params[:id])
       @job.update(job_params)
-      redirect_to my_jobs_path, notice: "Your job has been updated. Thank you!"
+      redirect_to my_jobs_path, notice: t("jobupdated")
     end
 
   def destroy

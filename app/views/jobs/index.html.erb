@@ -2,70 +2,80 @@
   <div class="row mt-3 mb-4">
     <div class="col">
       <h3><%= t("AvailableJobs") %></h3>
-        <div data-controller="search-jobs">
-          <div class = "search">
-            <%= form_with url: jobs_path, method: :get, html: {class:
-              "mb-4", data: {search_jobs_target: "form"}} do |f| %>
-                <%= f.text_field :query,
-                                  class: "form-control",
-                                  placeholder:t("SearchForAJob"),
-                                  value: params[:query],
+          <div data-controller="search-jobs">
+              <div class="row">
+                <div class="col-6">
+                  <div class = "search">
+                    <%= form_with url: jobs_path, method: :get, html: {class:
+                      "mb-4 input-lg", data: {search_jobs_target: "form"}} do |f| %>
+                        <%= f.text_field :query,
+                                          class: "form-control heightindex",
+                                          placeholder:t("SearchForAJob"),
+                                          value: params[:query],
 
 
-                data: {
-                  search_jobs_target: "input",
-                  action: "keyup->search-jobs#update"
-                  } %>
-                <%= f.hidden_field :locale, value: params[:locale] %>
-
-          </div>
-          <% end %>
-
-
-        <div class="accordion " id="accordionExample">
-          <div class="accordion-item ">
-
-            <h3 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                <%= t("advancedsearch") %>
-              </button>
-            </h3>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <div class = "search">
-
-                  <%= form_with url: jobs_path, method: :get, html: {class: "mb-4", data: {search_jobs_target: "form"}} do |f| %>
-                   <%= f.hidden_field :locale, value: params[:locale] %>
-                  <%= f.select :category, options_for_select([["categorias:",""],[t('painting'), 'painting'], [t('babysitting'), 'babysitting'], [t('deliveries'), 'deliveries'], [t('cleaning'), 'cleaning'], [t('petsitting'), 'petsitting'], [t('others'), 'others']], params[:category]), {}, class: "custom-width-he" %>
-                  <%= f.text_field :city, class: "custom-width", placeholder: t("city"), value: params[:city] %>
-                  <%= f.number_field :price, class: "custom-width", placeholder: t("price"), value: params[:price] %>
-                  <%= f.date_field :date, class: "custom-width-hed", placeholder: t("date"), value: params[:date] %>
-                  <%= f.submit t("search"), class: "btn btn-success mt-3" %>
-                  <div class="mt-1">
-                  <%=link_to t("cleanfilters"), jobs_path, class:"btn btn-secondary", style: "text-decoration:none; font-size: 15px;" %>
+                        data: {
+                          search_jobs_target: "input",
+                          action: "keyup->search-jobs#update"
+                          } %>
+                        <%= f.hidden_field :locale, value: params[:locale] %>
                   </div>
-                  <% end %>
+                </div>
+                    <% end %>
+
+
+
+          <div class="col-6 mt-4 rounded">
+            <div class="accordion " id="accordionExample">
+              <div class="accordion-item ">
+
+                <h3 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <%= t("advancedsearch") %>
+                  </button>
+                </h3>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <div class = "search">
+
+                      <%= form_with url: jobs_path, method: :get, html: {class: "mb-4", data: {search_jobs_target: "form"}} do |f| %>
+                      <%= f.hidden_field :locale, value: params[:locale] %>
+                      <%= f.select :category, options_for_select([["categorias:",""],[t('painting'), 'painting'], [t('babysitting'), 'babysitting'], [t('deliveries'), 'deliveries'], [t('cleaning'), 'cleaning'], [t('petsitting'), 'petsitting'], [t('others'), 'others']], params[:category]), {}, class: "custom-width-he" %>
+                      <%= f.text_field :city, class: "custom-width", placeholder: t("city"), value: params[:city] %>
+                      <%= f.number_field :price, class: "custom-width", placeholder: t("price"), value: params[:price] %>
+                      <%= f.date_field :date, class: "custom-width-hed", placeholder: t("date"), value: params[:date] %>
+
+                      <div class="row">
+                      <div class="col-3">
+                        <%= f.submit t("search"), class: "btn btn-success mt-3" %>
+                      </div>
+                      <div class="col-9 mt-3">
+                        <%=link_to t("cleanfilters"), jobs_path, class:"btn btn-secondary", style: "text-decoration:none; font-size: 15px;" %>
+                      </div>
+                      </div>
+                      <% end %>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-
-<%= link_to t("back"), root_path, class: "btn btn-success mt-3" %>
+          </div>
+            <%= link_to t("back"), root_path, class: "btn btn-success mt-3" %>
 
 
 
           <div>
-          <%= render "list", jobs: @jobs %>
-        </div>
+            <%= render "list", jobs: @jobs %>
+          </div>
 
-    <%# <div style="width: 100%; height: 600px;" %>
-      <%# data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>
-      <%# data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>
-    <%# </div> %>
+          <%# <div style="width: 100%; height: 600px;" %>
+            <%# data-controller="map"
+            data-map-markers-value="<%= @markers.to_json %>
+            <%# data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>
+          <%# </div> %>
 
-
+      </div>
     </div>
   </div>
 </div>

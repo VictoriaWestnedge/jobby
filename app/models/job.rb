@@ -16,7 +16,7 @@ class Job < ApplicationRecord
 
   include PgSearch::Model
     pg_search_scope :search_by_name_and_description_and_city,
-    against: [ :name, :description, :city ],
+    against: [ :name, :description, :city, :category, :price_per_hour, :start_date ],
     using: {
       tsearch: { prefix: true }
     }

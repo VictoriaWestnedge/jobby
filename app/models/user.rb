@@ -8,5 +8,4 @@ class User < ApplicationRecord
   has_many :my_jobs
   has_many :reviews
   has_many :messages, class_name: 'Message', foreign_key: 'id'
-  validates :nickname,  presence: true
 end
